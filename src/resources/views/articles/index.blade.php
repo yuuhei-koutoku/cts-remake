@@ -12,6 +12,12 @@
         <div>
             {{ $article->body }}
         </div>
+        <div>
+            {{ $article->user->name }}
+        </div>
+        <div>
+            {{ $article->created_at->format('Y/m/d H:i') }}
+        </div>
         @endforeach
     </div>
 @endsection
