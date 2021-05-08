@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
+    protected $fillable = [
+        'body',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\User');
