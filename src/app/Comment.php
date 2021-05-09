@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Article extends Model
+class Comment extends Model
 {
     protected $fillable = [
-        'title',
         'body',
     ];
 
@@ -18,8 +16,8 @@ class Article extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function comment(): HasMany
+    public function article(): BelongsTo
     {
-        return $this->HasMany('App\Comment');
+        return $this->belongsTo('App\Article');
     }
 }

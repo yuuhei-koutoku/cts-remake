@@ -11,7 +11,13 @@
 |
 */
 
+//users
 Auth::routes();
+
+//articles
 Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
+
+//comments
+Route::resource('/comments', 'CommentController')->except(['index', 'show'])->middleware('auth');
