@@ -18,7 +18,7 @@
 
     <form method="POST" action="{{ route('comments.store') }}">
         @csrf
-        <label class=コメント></label>
+        <label></label>
         <div class="form-group">
             <textarea name="body" class="form-control" rows="16" placeholder="コメントを入力してください">{{ $comment->body ?? old('body') }}</textarea>
         </div>
