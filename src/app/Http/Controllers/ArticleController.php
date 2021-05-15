@@ -12,9 +12,12 @@ class ArticleController extends Controller
     {
         $this->authorizeResource(Article::class, 'article');
     }
-    
-    public function index()
+
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+        dd($request);
+
         $articles = Article::all()->sortByDesc('created_at');
 
         return view('articles.index', ['articles' => $articles]);
