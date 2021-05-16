@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
@@ -17,27 +16,14 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        /*
-        $query = DB::table('articles');
-        if($search !== null){
-            //全角スペースを半角に
-            $search_split = mb_convert_kana($search,'s');
+        $query = Article::query();
 
-            //空白で区切る
-            $search_split2 = preg_split('/[\s]+/', $search_split,-1,PREG_SPLIT_NO_EMPTY);
-
-            //単語をループで回す
-            foreach($search_split2 as $value)
-            {
-                $query->where('body','like','%'.$value.'%');
-            }
+        if (!empty($search)) {
+            $query->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('body', 'LIKE', "%{$search}%");
         }
-        $query->select('id', 'title', 'body', 'created_at');
-        $query->orderBy('created_at', 'asc');
-        $articles = $query;
-        */
 
-        $articles = Article::all()->sortByDesc('created_at');
+        $articles = $query->get()->sortByDesc('created_at');
 
         return view('articles.index', ['articles' => $articles]);
     }
