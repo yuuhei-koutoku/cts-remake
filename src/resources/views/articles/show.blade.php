@@ -7,21 +7,16 @@
     <div class="container">
         @include('articles.card')
     </div>
-    <div class=h4>コメント</div>
-    <div>
-        @foreach($comments as $comment)
-            <div class="font-weight-bold">{{ $comment->user->name }}</div>
-            <div class="font-weight-lighter">{{ $comment->created_at->format('Y/m/d H:i') }}</div>
-            <div>{{ $comment->body }}</div>
-        @endforeach
-    </div>
 
-    <form method="POST" action="{{ route('comments.store') }}">
-        @csrf
-        <label></label>
-        <div class="form-group">
-            <textarea name="body" class="form-control" rows="16" placeholder="コメントを入力してください">{{ $comment->body ?? old('body') }}</textarea>
-        </div>
-        <button type="submit" class="btn blue-gradient btn-block">投稿する</button>
-    </form>
+    <div class="p-3">
+        <h3>コメント一覧</h3>
+        @foreach($article->comments as $comments)
+            {{ $comment->comment }}
+            <a href="{{ route('users.show', $comment->user->id) }}">
+                {{ $comment->user->name }}
+            </a>
+        @endforeach
+        <a href="{{ route('comments.create', ['article_id' => $article->id"]) }}" classs="btn btn-primary">コメントする</a>
+    </div>
+    
 @endsection
