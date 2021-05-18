@@ -8,15 +8,13 @@
         @include('articles.card')
     </div>
 
-    <div class="p-3">
-        <h3>コメント一覧</h3>
-        @foreach($article->comments as $comments)
-            {{ $comment->comment }}
-            <a href="{{ route('users.show', $comment->user->id) }}">
-                {{ $comment->user->name }}
-            </a>
-        @endforeach
-        <a href="{{ route('comments.create', ['article_id' => $article->id"]) }}" classs="btn btn-primary">コメントする</a>
-    </div>
-    
+    @auth
+    <form method="POST" action="{{ route('comments.store') }}">
+    @csrf
+    <input type="hidden" name="article_id" value="{{ $article->id }}">
+    <textarea class="form-control" name="comment" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
+
+    @endauth
+    <div class=h4>コメント</div>
+
 @endsection
