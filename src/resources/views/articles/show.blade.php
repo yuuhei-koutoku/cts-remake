@@ -13,7 +13,9 @@
     @csrf
     <input type="hidden" name="article_id" value="{{ $article->id }}">
     <textarea class="form-control" name="comment" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
-
+    <button type="submit" class="btn btn-primary">
+        コメントする
+    </button>
     @endauth
     <div class=h4>コメント一覧</div>
     @forelse($comments as $comment)
