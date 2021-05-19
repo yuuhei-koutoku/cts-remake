@@ -15,6 +15,12 @@
     <textarea class="form-control" name="comment" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
 
     @endauth
-    <div class=h4>コメント</div>
-
+    <div class=h4>コメント一覧</div>
+    @forelse($comments as $comment)
+        <div>
+            {!! nl2br(e($comment->comment)) !!}
+        </div>
+        @empty
+        <p>コメントはまだありません。</p>
+    @endforelse
 @endsection
