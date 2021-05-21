@@ -3,26 +3,27 @@
 @section('title', '詳細ページ')
 
 @section('content')
-    @include('nav')
-    <div class="container">
-        @include('articles.card')
-    </div>
+@include('nav')
+<div class="container">
+    @include('articles.card')
+</div>
 
-    @auth
-    <form method="POST" action="{{ route('comments.store') }}">
+@auth
+<form method="POST" action="{{ route('comments.store') }}">
     @csrf
     <input type="hidden" name="article_id" value="{{ $article->id }}">
     <textarea class="form-control" name="comment" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn blue-gradient btn-block">
         コメントする
     </button>
-    @endauth
-    <div class=h4>コメント一覧</div>
-    @forelse($comments as $comment)
-        <div>
-            {!! nl2br(e($comment->comment)) !!}
-        </div>
-        @empty
-        <p>コメントはまだありません。</p>
-    @endforelse
+</form>
+@endauth
+<div class=h4>コメント一覧</div>
+@forelse($comments as $comment)
+<div>
+    {!! nl2br(e($comment->comment)) !!}
+</div>
+@empty
+<p>コメントはまだありません。</p>
+@endforelse
 @endsection
