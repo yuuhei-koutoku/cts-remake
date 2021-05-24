@@ -11,8 +11,7 @@
     @auth
         <form method="POST" action="{{ route('comments.store') }}">
             @csrf
-            <input type="hidden" name="article_id" value="{{ $article->id }}">
-            <textarea class="form-control" name="comment" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
+            <textarea class="form-control" name="body" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
             <button type="submit" class="btn blue-gradient btn-block">
                 コメントする
             </button>
