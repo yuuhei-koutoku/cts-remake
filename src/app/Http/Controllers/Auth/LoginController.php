@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -36,5 +37,17 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    //ゲストログインボタン
+    private const GUEST_USER_ID = 1;
+
+    public function guestLogin()
+    {
+        if (Auth::loginUsingId(self::GUEST_USER_ID)) {
+            return redirect('/');
+        }
+
+        return redirect('/');
     }
 }
