@@ -1,9 +1,14 @@
 <div class="card mt-3">
     <div class="card-body d-flex flex-row">
-        <i class="fas fa-user-circle fa-3x mr-1"></i>
-        <div>
-            <div class="font-weight-bold">{{ $article->user->name }}</div>
-            <div class="font-weight-lighter">{{ $article->created_at->format('Y/m/d H:i') }}</div>
+        <div class="card-body pt-0">
+            <h3 class="h4 card-title">
+                <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+                    {{ $article->title }}
+                </a>
+            </h3>
+            <div class="card-text">
+                {{ $article->body }}
+            </div>
         </div>
 
         @if( Auth::id() === $article->user_id )
@@ -53,27 +58,22 @@
         @endif
 
     </div>
-    <div class="card-body pt-0">
-        <h3 class="h4 card-title">
-            <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
-                {{ $article->title }}
+    <div>
+        <div class="font-weight-bold">{{ $article->user->name }}</div>
+        <div class="font-weight-lighter">{{ $article->created_at->format('Y/m/d H:i') }}</div>
+    </div>
+
+    @foreach($article->tags as $tag)
+    @if($loop->first)
+    <div class="card-body pt-0 pb-4 pl-3">
+        <div class="card-text line-height">
+            @endif
+            <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
+                {{ $tag->name }}
             </a>
-        </h3>
-        <div class="card-text">
-            {{ $article->body }}
+            @if($loop->last)
         </div>
     </div>
-    @foreach($article->tags as $tag)
-        @if($loop->first)
-            <div class="card-body pt-0 pb-4 pl-3">
-                <div class="card-text line-height">
-        @endif
-                    <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
-                        {{ $tag->name }}
-                    </a>
-        @if($loop->last)
-                </div>
-            </div>
-        @endif
+    @endif
     @endforeach
 </div>
