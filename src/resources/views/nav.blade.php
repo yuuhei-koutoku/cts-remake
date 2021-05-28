@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand navbar-dark aqua-gradient">
-    <!bg-success>
 
         <a class="navbar-brand" href="/"><i class="fas fa-building"></i>Construction Technologies</a>
 
