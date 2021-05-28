@@ -3,6 +3,7 @@
 @section('title', 'ログイン')
 
 @section('content')
+    @include('nav')
     <div class="container">
         <div class="row">
             <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
@@ -29,9 +30,9 @@
 
                                 <input type="hidden" name="remember" id="remember" value="on">
 
-                                <button class="btn btn-block blue-gradient mt-2 mb-2" type="submit">ログイン</button>
+                                <button class="btn btn-block aqua-gradient mt-2 mb-2" type="submit">ログイン</button>
 
-                                <button class="btn btn-success">
+                                <button class="btn btn-block peach-gradient mt-2 mb-2">
                                     <a href="{{ route('login.guest') }}" class="text-white">
                                         ゲストログイン
                                     </a>
