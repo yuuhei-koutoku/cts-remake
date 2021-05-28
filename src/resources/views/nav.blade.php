@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand navbar-dark blue-gradient">
     <!bg-success>
 
-        <a class="navbar-brand" href="/">Construction Technologies</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-building"></i>Construction Technologies</a>
 
         <ul class="navbar-nav ml-auto">
 
