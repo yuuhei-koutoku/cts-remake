@@ -7,7 +7,7 @@
 
         <a class="navbar-brand" href="/"><i class="fas fa-building"></i>Construction Technologies</a>
 
-        <ul class="navbar-nav mr-auto mt-lg-0">
+        <ul class="navbar-nav ml-auto mt-lg-0">
 
             @guest
             <li class="nav-item">
@@ -40,8 +40,8 @@
                     <i class="fas fa-user-circle"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <button class="dropdown-item" type="button" onclick="location.href=''">
-                        マイページ
+                    <button class="dropdown-item">
+                        {{ Auth::user()->name }}
                     </button>
                     <div class="dropdown-divider"></div>
                     <button form="logout-button" class="dropdown-item" type="submit">
