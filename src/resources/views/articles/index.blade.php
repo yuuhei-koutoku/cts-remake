@@ -11,6 +11,8 @@
                 <input class="form-control me-2 mt-3" name="search" type="search" placeholder="検索" aria-label="Search">
                 <button class="btn btn-outline-success mt-3 py-0" type="submit">検索する</button>
             </form>
+            <hr>
+            <h4>タグ</h4>
         </div>
         @foreach($articles as $article)
         @include('articles.card')
