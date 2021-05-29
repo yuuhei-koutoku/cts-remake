@@ -81,7 +81,7 @@ class ArticleController extends Controller
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $article->tags()->attach($tag);
         });
-        
+
         return redirect()->route('articles.index');
     }
 
