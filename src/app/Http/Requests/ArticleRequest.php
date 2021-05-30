@@ -24,6 +24,7 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
+            'image' => 'mimes:jpeg,jpg,png,gif|max:10240',
             'title' => 'required|max:50',
             'body' => 'required|max:500',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',

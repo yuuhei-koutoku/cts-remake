@@ -1,6 +1,9 @@
 <div class="card mt-3 col-md-8">
     <div class="card-body d-flex flex-row">
         <div class="card-body pt-0">
+            <div>
+            <img src="" alt="">
+            </div>
             <h3 class="h4 card-title">
                 <a class="text-muted" href="{{ route('articles.show', ['article' => $article]) }}">
                     {{ $article->title }}

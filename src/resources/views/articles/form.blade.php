@@ -14,7 +14,6 @@
     <label></label>
     <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
 </div>
-<div class="file-up">
-    <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
-    <input name="img" type="file" accept="image/*">
+<div class="form-group">
+    <input type="file" class="from-control-file" id="image" name="image">
 </div>
