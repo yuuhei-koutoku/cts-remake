@@ -14,3 +14,7 @@
     <label></label>
     <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
 </div>
+<input id="image" type="file" name="image">
+<button type="submit">
+    アップロード
+</button>
