@@ -2,7 +2,7 @@
     <div class="card-body d-flex flex-row">
         <div class="card-body pt-0">
             <div>
-            <img src="" alt="">
+                <img src="{{ asset('/storage/'.$article->image)}}" alt="">
             </div>
             <h3 class="h4 card-title">
                 <a class="text-muted" href="{{ route('articles.show', ['article' => $article]) }}">

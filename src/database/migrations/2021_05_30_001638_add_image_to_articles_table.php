@@ -14,7 +14,7 @@ class AddImageToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('image')->after('id')->nullable();
+            $table->string('image')->nullable()->after('id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddImageToArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            //
+            $table->dropColumn('image');
         });
     }
 }
