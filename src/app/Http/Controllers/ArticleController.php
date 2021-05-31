@@ -44,6 +44,8 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+        //$filename = $request->file('image')->store('public'); // publicフォルダに保存
+        //$article->image = str_replace('public/', '', $filename); // 保存するファイル名からpublicを除外
         $article->user_id = $request->user()->id;
         $article->save();
 
