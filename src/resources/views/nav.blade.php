@@ -40,9 +40,9 @@
                     <i class="fas fa-hard-hat"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <button class="dropdown-item">
+                    <div class="dropdown-item text-muted pl-4">
                         {{ Auth::user()->name }}
-                    </button>
+                    </div>
                     <div class="dropdown-divider"></div>
                     <button form="logout-button" class="dropdown-item" type="submit">
                         ログアウト
