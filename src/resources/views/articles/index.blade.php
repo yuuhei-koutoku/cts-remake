@@ -6,6 +6,9 @@
 @include('nav')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <img src="/images/Construction-pana.png" width="100%">
+        </div>
         <div class="col-md-4">
             <form method="GET" action="{{ route('articles.index') }}" class="d-flex">
                 <input class="form-control me-2 mt-3" name="search" type="search" placeholder="検索" aria-label="Search">
