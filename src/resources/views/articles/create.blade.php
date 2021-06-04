@@ -7,6 +7,6 @@
 @section('content')
     <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
         @include('articles.form')
-        <button type="submit" class="btn blue-gradient btn-block"><i class="fas fa-pen mr-1"></i>投稿する</button>
+        <button type="submit" class="btn aqua-gradient btn-block"><i class="fas fa-pen mr-1"></i>投稿する</button>
     </form>
 @endsection
