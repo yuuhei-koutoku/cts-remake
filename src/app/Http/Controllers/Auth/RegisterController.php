@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
-//use App\Rules\CustomPasswordValidation;
+use App\Rules\CustomPasswordValidation;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -54,8 +54,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'min:2', 'max:16', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            //'password' => ['required', 'string', new CustomPasswordValidation, 'confirmed'],
+            //'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', new CustomPasswordValidation, 'confirmed'],
         ]);
     }
 
