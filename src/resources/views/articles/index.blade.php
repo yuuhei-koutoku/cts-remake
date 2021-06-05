@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12">
             @guest
-            <img src="/images/Construction-pana.png" width="100%">
+            <img src="/images/Construction-pana_r1.png" width="100%">
             @endguest
             <form method="GET" action="{{ route('articles.index') }}" class="d-flex">
                 <input class="form-control me-2 mt-3" name="search" type="search" placeholder="検索" aria-label="Search">
