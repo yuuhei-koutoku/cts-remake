@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="padding-top: 5rem">
     <div id="app">
         @yield('content')
     </div>
