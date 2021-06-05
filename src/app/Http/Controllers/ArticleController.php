@@ -93,9 +93,9 @@ class ArticleController extends Controller
         return redirect()->route('articles.index');
     }
 
-    public function show(Article $article, Comment $comment)
+    public function show(Article $article)
     {
-        $comments = $article->comments()->orderBy('created_at', 'desc');
+        $comments = $article->comments;
         return view('articles.show', ['article' => $article, 'comments' => $comments]);
     }
 }

@@ -10,11 +10,11 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request, Comment $comment)
     {
-        $comment->fill($request->all());
+        $arry=$request->all();
+        $comment->fill($arry);
         $comment->user_id = $request->user()->id;
-        $comment->article_id = $request->article()->id;
         $comment->save();
-        return redirect()->route('articles.show');
+        return redirect()->route('articles.show', ['article' => $arry['article_id']]);
     }
 
     public function edit()
