@@ -12,7 +12,7 @@
             @endguest
             <form method="GET" action="{{ route('articles.index') }}" class="d-flex">
                 <input class="form-control me-2 mt-3" name="search" type="search" placeholder="検索" aria-label="Search">
-                <button class="btn btn-outline-success mt-3 py-0" type="submit">検索する</button>
+                <button class="btn btn-outline-success mt-3 mb-0 ml-0 py-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
             @foreach($articles as $article)
