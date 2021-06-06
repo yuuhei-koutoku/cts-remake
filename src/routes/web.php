@@ -24,5 +24,6 @@ Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
 //comments
-//Route::resource('/comments', 'CommentController')->except(['index', 'show'])->middleware('auth');
-Route::post('articles.comments', 'CommentController@store')->name('comments.store')->middleware('auth');
+Route::resource('/comments', 'CommentController')->except(['index', 'create', 'show'])->middleware('auth');
+//Route::post('articles.comments', 'CommentController@store')->name('comments.store')->middleware('auth');
+//Route::get('/articles/{article_id}/comments/{id}', 'CommentController@edit')->name('comments.edit')->middleware('auth');
