@@ -10,7 +10,7 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request, Comment $comment)
     {
-        $array=$request->all();
+        $array = $request->all();
         $comment->fill($array);
         $comment->user_id = $request->user()->id;
         $comment->save();
@@ -22,9 +22,12 @@ class CommentController extends Controller
         return view('comments.edit', ['comment' => $comment]);
     }
 
-    public function update()
+    public function update(CommentRequest $request, Comment $comment)
     {
-        //
+        $array = $request->all();
+        $comment->fill($array)->save();
+
+        return redirect()->route('articles.show', ['comment' => $array['article_id']]);
     }
 
     public function destroy()
