@@ -17,9 +17,9 @@ class CommentController extends Controller
         return redirect()->route('articles.show', ['article' => $array['article_id']]);
     }
 
-    public function edit()
+    public function edit(Comment $comment)
     {
-        //
+        return view('comments.edit', ['comment' => $comment]);
     }
 
     public function update()

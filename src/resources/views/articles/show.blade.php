@@ -15,6 +15,13 @@
         @forelse($comments as $comment)
         <div>
             {!! nl2br(e($comment->body)) !!}
+
+
+            @if( Auth::id() === $comment->user_id )
+            <a href="{{ route("comments.edit", ['comment' => $comment]) }}">更新</a>
+
+            @endif
+
         </div>
         @empty
         <p>コメントはまだありません。</p>
