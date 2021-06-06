@@ -15,7 +15,10 @@
         @forelse($comments as $comment)
         <div>
             {!! nl2br(e($comment->body)) !!}
-
+            <div>
+                <span class="font-weight-lighter pr-2">{{ $comment->user->name }}</span>
+                <span class="font-weight-lighter">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+            </div>
 
             @if( Auth::id() === $comment->user_id )
             <a href="{{ route("comments.edit", ['comment' => $comment]) }}">更新</a>
