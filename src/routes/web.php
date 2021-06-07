@@ -1,6 +1,11 @@
 <?php
 
 /*
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
+*/
+
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -25,5 +30,12 @@ Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
 //comments
 Route::resource('/comments', 'CommentController')->except(['index', 'create', 'show'])->middleware('auth');
-//Route::post('articles.comments', 'CommentController@store')->name('comments.store')->middleware('auth');
-//Route::get('/articles/{article_id}/comments/{id}', 'CommentController@edit')->name('comments.edit')->middleware('auth');
+
+/*
+Route::resource('/articles/{article_id}/comments/{id}', 'CommentController')->except(['index', 'create', 'show'])->middleware('auth');
+
+Route::post('/articles/{article_id}/comments/{id}', 'CommentController@store')->name('comments.store')->middleware('auth');
+Route::get('/articles/{article_id}/comments/{id}', 'CommentController@edit')->name('comments.edit')->middleware('auth');
+Route::put('/articles/{article_id}/comments/{id}', 'CommentController@update')->name('comments.update')->middleware('auth');
+Route::delete('/articles/{article_id}/comments/{id}', 'CommentController@destroy')->name('comments.destroy')->middleware('auth');
+*/
