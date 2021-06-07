@@ -20,11 +20,7 @@
                 <span class="font-weight-lighter">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
             </div>
 
-            @if( Auth::id() === $comment->user_id )
-            <a href="{{ route("comments.edit", ['comment' => $comment]) }}">更新</a>
-
-            @endif
-
+            @include('comments.modal')
         </div>
         @empty
         <p>コメントはまだありません。</p>

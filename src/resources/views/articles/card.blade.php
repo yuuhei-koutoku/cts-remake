@@ -63,8 +63,8 @@
                     <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
                         @csrf
                         @method('DELETE')
-                        <div class="modal-body">
-                            {{ $article->title }}を削除します。よろしいですか？
+                        <div class="modal-body text-center">
+                            記事を削除します。よろしいですか？
                         </div>
                         <div class="modal-footer justify-content-between">
                             <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
