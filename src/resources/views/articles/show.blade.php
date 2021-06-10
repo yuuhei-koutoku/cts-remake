@@ -14,14 +14,13 @@
             <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
                 <div class="card-body">
                     @forelse($comments as $comment)
-                    <div>
+                    <div class="my-3">
                         {!! nl2br(e($comment->body)) !!}
-                        <div>
+                        <div class="text-right">
                             <span class="font-weight-lighter pr-2">{{ $comment->user->name }}</span>
                             <span class="font-weight-lighter">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                            <div class="comment-modal">@include('comments.modal')</div>
                         </div>
-
-                        @include('comments.modal')
                     </div>
                     @empty
                     <p>コメントはまだありません。</p>
