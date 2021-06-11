@@ -26,7 +26,7 @@ Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
-Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
+Route::get('/tags/{name}', 'TagController@show')->name('tags.show'); //タグによる記事検索
 
 //comments
 Route::resource('/comments', 'CommentController')->except(['index', 'create', 'show'])->middleware('auth');
