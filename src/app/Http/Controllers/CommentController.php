@@ -27,7 +27,7 @@ class CommentController extends Controller
         $array = $request->all();
         $comment->fill($array)->save();
 
-        return redirect()->route('articles.show', ['comment' => $array['article_id']]);
+        return redirect()->route('articles.show', $comment->article);
     }
 
     public function destroy(Comment $comment)
