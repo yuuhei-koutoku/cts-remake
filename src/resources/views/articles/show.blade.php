@@ -21,6 +21,7 @@
                             <span class="font-weight-lighter">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
                             <div class="comment-modal">@include('comments.modal')</div>
                         </div>
+                        <hr>
                     </div>
                     @empty
                     <p>コメントはまだありません。</p>
