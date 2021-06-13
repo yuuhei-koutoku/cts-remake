@@ -55,7 +55,7 @@ class ArticleController extends Controller
             // バケットの`myprefix`フォルダへアップロード
             $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
             // アップロードした画像のフルパスを取得
-            $article->image_path = Storage::disk('s3')->url($path);
+            $article->image = Storage::disk('s3')->url($path);
         }
         $article->user_id = $request->user()->id;
         $article->save();
