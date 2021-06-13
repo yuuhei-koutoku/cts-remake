@@ -19,6 +19,7 @@
             @include('articles.card')
             @endforeach
         </div>
+        {{ $articles->links() }}
     </div>
 </div>
 @endsection
