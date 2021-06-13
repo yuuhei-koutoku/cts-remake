@@ -27,7 +27,7 @@ class ArticleController extends Controller
             ->orWhere('body', 'LIKE', "%{$search}%");
         }
 
-        $articles = $query->orderByDesc('created_at')->paginate(5);
+        $articles = $query->orderByDesc('created_at')->paginate(10);
 
         return view('articles.index', ['articles' => $articles]);
     }
@@ -47,10 +47,8 @@ class ArticleController extends Controller
     {
         $article->fill($request->all());
         if ($request->file('image')){
-            //$filename = $request->file('image')->store('public'); // publicフォルダに保存
-            //$article->image = str_replace('public/', '', $filename); // 保存するファイル名からpublicを除外
 
-            // s3アップロード開始
+            // S3アップロード開始
             $image = $request->file('image');
             // バケットの`myprefix`フォルダへアップロード
             $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
