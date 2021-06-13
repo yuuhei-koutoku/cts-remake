@@ -6,6 +6,7 @@ use App\Article;
 use App\Tag;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -54,7 +55,7 @@ class ArticleController extends Controller
             // バケットの`myprefix`フォルダへアップロード
             $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
             // アップロードした画像のフルパスを取得
-            $article->image_path = Storage::disk('s3')->url($path);
+            $article->image = Storage::disk('s3')->url($path);
         }
         $article->user_id = $request->user()->id;
         $article->save();
