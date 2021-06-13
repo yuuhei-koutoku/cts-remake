@@ -27,7 +27,7 @@ class ArticleController extends Controller
             ->orWhere('body', 'LIKE', "%{$search}%");
         }
 
-        $articles = $query->orderByDesc('created_at')->paginate(5);
+        $articles = $query->orderByDesc('created_at')->paginate(10);
 
         return view('articles.index', ['articles' => $articles]);
     }
