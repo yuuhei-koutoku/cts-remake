@@ -49,9 +49,17 @@ class ArticleController extends Controller
         if ($request->file('image')){
 
             // S3アップロード開始
-            $image = $request->file('image');
+            $file = $request->file('image');
+
+            /* 画像をリサイズするとエラー（504 Gateway Time-out nginx/1.18.0）
+            // 画像の拡張子を取得
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // 画像をリサイズ
+            $resize_img = InterventionImage::make($file)->resize(1200, 675)->encode($extension);
+            */
+
             // バケットの`myprefix`フォルダへアップロード
-            $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+            $path = Storage::disk('s3')->putFile('myprefix', $file, 'public'); //第二引数(string)$resize_img
             // アップロードした画像のフルパスを取得
             $article->image = Storage::disk('s3')->url($path);
         }
