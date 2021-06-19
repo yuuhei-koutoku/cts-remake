@@ -47,27 +47,23 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+
+        // 画像投稿機能
         if ($request->file('image')){
-
-            // S3アップロード開始
+            // formから送信されたimgファイルを読み込む
             $file = $request->file('image');
-
             // 画像の拡張子を取得
             $extension = $request->file('image')->getClientOriginalExtension();
-
             // 画像の名前を取得
             $filename = $request->file('image')->getClientOriginalName();
-
             // 画像をリサイズ
             $resize_img = InterventionImage::make($file)->resize(500, 500)->encode($extension);
-
             // バケットの`myprefix`フォルダへアップロード
-            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public'); //第二引数(string)$resize_img
-
+            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
             // アップロードした画像のフルパスを取得
             $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
-
         }
+
         $article->user_id = $request->user()->id;
         $article->save();
 
