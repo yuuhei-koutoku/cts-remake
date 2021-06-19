@@ -18,4 +18,17 @@ RUN apt-get update \
   vim \
   && docker-php-ext-install pdo_mysql bcmath
 
+RUN apt-get install -y wget libjpeg-dev libfreetype6-dev
+RUN apt-get install -y  libmagick++-dev \
+  libmagickwand-dev \
+  libpq-dev \
+  libfreetype6-dev \
+  libjpeg62-turbo-dev \
+  libpng-dev \
+  libwebp-dev \
+  libxpm-dev
+
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
+RUN docker-php-ext-install -j$(nproc) gd
+
 WORKDIR /var/www/html

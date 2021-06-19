@@ -7,6 +7,7 @@ use App\Tag;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use \InterventionImage;
 
 class ArticleController extends Controller
 {
@@ -51,17 +52,21 @@ class ArticleController extends Controller
             // S3アップロード開始
             $file = $request->file('image');
 
-            /* 画像をリサイズするとエラー（504 Gateway Time-out nginx/1.18.0）
             // 画像の拡張子を取得
             $extension = $request->file('image')->getClientOriginalExtension();
+
+            // 画像の名前を取得
+            $filename = $request->file('image')->getClientOriginalName();
+
             // 画像をリサイズ
-            $resize_img = InterventionImage::make($file)->resize(1200, 675)->encode($extension);
-            */
+            $resize_img = InterventionImage::make($file)->resize(500, 500)->encode($extension);
 
             // バケットの`myprefix`フォルダへアップロード
-            $path = Storage::disk('s3')->putFile('myprefix', $file, 'public'); //第二引数(string)$resize_img
+            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public'); //第二引数(string)$resize_img
+
             // アップロードした画像のフルパスを取得
-            $article->image = Storage::disk('s3')->url($path);
+            $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
+
         }
         $article->user_id = $request->user()->id;
         $article->save();
