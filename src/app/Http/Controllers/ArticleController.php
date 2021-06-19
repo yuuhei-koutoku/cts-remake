@@ -18,11 +18,11 @@ class ArticleController extends Controller
 
     public function index(Request $request)
     {
-        //検索機能
+        // 文字列受け取り
         $search = $request->input('search');
+        // クエリ生成
         $query = Article::query();
-
-        //タイトルと本文の曖昧検索を実施
+        // タイトルと本文の曖昧検索を実施
         if (!empty($search)) {
             $query->where('title', 'LIKE', "%{$search}%")
             ->orWhere('body', 'LIKE', "%{$search}%");
@@ -47,27 +47,23 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+
+        // 画像投稿機能
         if ($request->file('image')){
-
-            // S3アップロード開始
+            // formから送信されたimgファイルを読み込む
             $file = $request->file('image');
-
             // 画像の拡張子を取得
             $extension = $request->file('image')->getClientOriginalExtension();
-
             // 画像の名前を取得
             $filename = $request->file('image')->getClientOriginalName();
-
             // 画像をリサイズ
             $resize_img = InterventionImage::make($file)->resize(500, 500)->encode($extension);
-
             // バケットの`myprefix`フォルダへアップロード
-            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public'); //第二引数(string)$resize_img
-
+            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
             // アップロードした画像のフルパスを取得
             $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
-
         }
+
         $article->user_id = $request->user()->id;
         $article->save();
 
