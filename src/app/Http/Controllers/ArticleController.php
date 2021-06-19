@@ -18,11 +18,11 @@ class ArticleController extends Controller
 
     public function index(Request $request)
     {
-        //検索機能
+        // 文字列受け取り
         $search = $request->input('search');
+        // クエリ生成
         $query = Article::query();
-
-        //タイトルと本文の曖昧検索を実施
+        // タイトルと本文の曖昧検索を実施
         if (!empty($search)) {
             $query->where('title', 'LIKE', "%{$search}%")
             ->orWhere('body', 'LIKE', "%{$search}%");
