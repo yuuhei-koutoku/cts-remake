@@ -19,7 +19,7 @@
                         <div class="text-right">
                             <span class="font-weight-lighter pr-2">{{ $comment->user->name }}</span>
                             <span class="font-weight-lighter pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                            <div class="comment-modal">@include('comments.modal')</div>
+                            <div class="auth-dropdown">@include('comments.modal')</div>
                         </div>
                         <hr>
                     </div>

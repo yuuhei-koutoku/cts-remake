@@ -57,7 +57,7 @@ class ArticleController extends Controller
             // 画像の名前を取得
             $filename = $request->file('image')->getClientOriginalName();
             // 画像をリサイズ
-            $resize_img = InterventionImage::make($file)->resize(462.5, 260)->encode($extension);
+            $resize_img = InterventionImage::make($file)->resize(256, 144)->encode($extension);
             // バケットの`myprefix`フォルダへアップロード
             $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
             // アップロードした画像のフルパスを取得
