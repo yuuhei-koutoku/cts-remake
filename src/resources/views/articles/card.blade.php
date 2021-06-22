@@ -3,7 +3,7 @@
         <div class="card-body d-flex flex-row">
             <div class="card-body p-0">
 
-                <div class="col-3 aritcle-card">
+                <div class="col-3 aritcle-card p-0">
                     <div class="view overlay">
                         @if ($article->image)
                         <img src="{{ $article->image }}">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="col-8 aritcle-card">
+                <div class="col-8 aritcle-card p-0">
                     <h3 class="h4 card-title">
                         <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
                             {{ $article->title }}
@@ -36,13 +36,13 @@
                     @endforeach
 
                     <div>
-                        <span class="font-weight-lighter pr-2">{{ $article->user->name }}</span>
-                        <span class="font-weight-lighter pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                        <span class="ligth-font pr-2">{{ $article->user->name }}</span>
+                        <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
                         <div class="aritcle-card">
                             @if( Auth::id() === $article->user_id )
                             <!-- dropdown -->
                             <div class="ml-auto card-text">
-                                <div class="dropdown">
+                                <div class="dropup">
                                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-h"></i>
                                     </a>

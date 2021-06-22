@@ -8,7 +8,12 @@
 }
 
 .article-title:hover {
-  color: rgb(245, 245, 245);
+  color: silver;
+}
+
+.ligth-font {
+  font-size: 3px;
+  color: silver;
 }
 
 /* コメント一覧 Scrollbar usage within cards */
