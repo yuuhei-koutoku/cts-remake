@@ -1,7 +1,15 @@
-.auth-dropdown {
+.aritcle-card {
   display: inline-block;
 }
 
+.article-title {
+  font-size: 30px;
+  color: black;
+}
+
+.article-title:hover {
+  color: rgb(245, 245, 245);
+}
 
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
