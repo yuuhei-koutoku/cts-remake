@@ -1,7 +1,7 @@
 <div class="col-12">
     <div class="card mt-3">
         <div class="card-body d-flex flex-row">
-            <div class="card-body pt-0">
+            <div class="card-body p-0">
 
                 <div class="col-3 aritcle-card">
                     <div class="view overlay">
@@ -14,9 +14,9 @@
                     </div>
                 </div>
 
-                <div class="col-5 aritcle-card">
+                <div class="col-8 aritcle-card">
                     <h3 class="h4 card-title">
-                        <a class="text-muted" href="{{ route('articles.show', ['article' => $article]) }}">
+                        <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
                             {{ $article->title }}
                         </a>
                     </h3>
@@ -34,10 +34,6 @@
                     </div>
                     @endif
                     @endforeach
-
-                    <div class="text-dark pb-3">
-                        {{ $article->body }}
-                    </div>
 
                     <div>
                         <span class="font-weight-lighter pr-2">{{ $article->user->name }}</span>
