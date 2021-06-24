@@ -15,6 +15,9 @@
             <li><a href="{{ route('logout') }}">ログアウト</a></li>
             @endauth
         </ul>
+        <div class="footer__copyright">
+            &copy; 
+        </div>
     </nav>
 
 
