@@ -1,7 +1,7 @@
 <footer>
     <div class="logo">
         <i class="fas fa-building"></i>
-        <span class="logo_style">Construction Technologies</span>
+        <span class="logo_style">建設技術情報サイト</span>
     </div>
     <nav class="footer__nav">
         <ul>
@@ -16,7 +16,7 @@
             @endauth
         </ul>
         <div class="footer__copyright">
-            &copy; 
+            &copy;
         </div>
     </nav>
 
