@@ -5,7 +5,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <a class="navbar-brand" href="/"><i class="fas fa-building"></i>Construction Technologies</a>
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-building"></i>
+            <span class="logo_style">建設技術情報サイト</span>
+        </a>
 
         <ul class="navbar-nav ml-auto mt-lg-0">
 
