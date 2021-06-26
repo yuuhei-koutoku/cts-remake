@@ -3,10 +3,15 @@
 @section('title', 'ログイン')
 
 @section('content')
-@include('nav')
 <div class="container">
     <div class="row">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
+            <h1 class="text-center">
+                <a class="text-dark" href="/">
+                    <i class="fas fa-building"></i>
+                    <span class="logo_style">建設技術情報サイト</span>
+                </a>
+            </h1>
             <form method="POST" class="text-center border border-light p-5" action="{{ route('login') }}">
                 @csrf
 
