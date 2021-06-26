@@ -1,21 +1,20 @@
 <div class="my-5">
     <div class="row">
+        
         <div class="col-md-3">
-            <div>
-                <div class="view overlay">
-                    @if ($article->image)
-                    <img src="{{ $article->image }}" style="width:255px; height:143px; margin:0 auto;">
-                    <a href="{{ route('articles.show', ['article' => $article]) }}">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                    @endif
-                </div>
+            <div class="view overlay">
+                @if ($article->image)
+                <img src="{{ $article->image }}" style="width:255px; height:143px; margin:0 auto;">
+                <a href="{{ route('articles.show', ['article' => $article]) }}">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+                @endif
             </div>
-
         </div>
+
         <div class="col-md-9">
             <div>
-                <h3 class="h4 card-title">
+                <h3 class="card-title">
                     <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
                         {{ $article->title }}
                     </a>
