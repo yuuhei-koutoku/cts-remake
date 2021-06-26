@@ -17,9 +17,9 @@
                     <div class="my-3">
                         {!! nl2br(e($comment->body)) !!}
                         <div class="text-right">
-                            <span class="font-weight-lighter pr-2">{{ $comment->user->name }}</span>
-                            <span class="font-weight-lighter pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                            <div class="auth-dropdown">@include('comments.modal')</div>
+                            <span class="ligth-font pr-2">{{ $comment->user->name }}</span>
+                            <span class="ligth-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                            <div class="auth-dropup">@include('comments.modal')</div>
                         </div>
                         <hr>
                     </div>
