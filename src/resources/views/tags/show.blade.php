@@ -11,7 +11,7 @@
             </div>
         </div>
         @foreach($tag->articles as $article)
-            @include('articles.card')
+        @include('articles.list')
         @endforeach
     </div>
 @endsection
