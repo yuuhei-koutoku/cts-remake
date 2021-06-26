@@ -5,10 +5,19 @@
 @include('nav')
 
 @section('content')
-<form method="POST" action="{{ route('comments.update', ['comment' => $comment]) }}" enctype="multipart/form-data">
-    @csrf
-    @method('PATCH')
-    <textarea class="form-control" name="body" rows="4" placeholder="コメントを入力してください。" required>{{ $comment->body ?? old('body') }}</textarea>
-    <button type="submit" class="btn aqua-gradient btn-block"><i class="fas fa-pen mr-1"></i>更新する</button>
-</form>
+@csrf
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <div class="form-group">
+                <form method="POST" action="{{ route('comments.update', ['comment' => $comment]) }}">
+                    @csrf
+                    @method('PATCH')
+                    <textarea class="form-control my-5" name="body" rows="4" placeholder="コメントを入力してください。" required>{{ $comment->body ?? old('body') }}</textarea>
+                    <button type="submit" class="btn aqua-gradient btn-block"><i class="fas fa-pen mr-1"></i>更新する</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
