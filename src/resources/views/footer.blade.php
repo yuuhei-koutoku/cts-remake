@@ -15,7 +15,7 @@
                     <i class="fas fa-building"></i>
                     <span class="logo_style">建設技術情報サイト</span>
                 </h5>
-                <p>このサイトは架空サイトです。<a href="https://construction-technologies-site.herokuapp.com/" target="_blank" rel="noopener noreferrer"><u>日刊建設工業新聞</u></a>から引用しています。</p>
+                <p>このサイトは架空サイトです。<a href="https://www.decn.co.jp/" target="_blank" rel="noopener noreferrer"><u>日刊建設工業新聞</u></a>から引用しています。</p>
 
             </div>
             <!-- Grid column -->
