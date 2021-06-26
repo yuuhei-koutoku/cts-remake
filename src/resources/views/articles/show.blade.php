@@ -8,7 +8,7 @@
     <div>
         <div>
 
-            <h3 class="card-title">
+            <h3 class="card-title mt-5">
                 <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
                     {{ $article->title }}
                 </a>
@@ -79,11 +79,9 @@
                 </div>
             </div>
 
-            <div class="article-show-img">
-                @if ($article->image)
-                <img src="{{ $article->image }}" style="width:100%;">
-                @endif
-            </div>
+            @if ($article->image)
+            <img src="{{ $article->image }}" class="article-show-img my-3">
+            @endif
 
             <div class="text-dark pb-3">
                 {{ $article->body }}

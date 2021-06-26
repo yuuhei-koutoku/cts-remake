@@ -21,6 +21,11 @@
   color: silver;
 }
 
+.article-show-img {
+  width: 100%;
+  margin: 4rem 0;
+}
+
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
 -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
