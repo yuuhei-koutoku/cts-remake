@@ -12,7 +12,7 @@
         <div class="col-12">
             <form method="GET" action="{{ route('articles.index') }}" class="d-flex">
                 <input class="form-control me-2 mt-3" name="search" value="{{ request('search') }}" type="search" placeholder="キーワードを入力" aria-label="Search">
-                <button class="btn btn-outline-success mt-3 mb-0 ml-0 py-0" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-outline-info mt-3 mb-0 ml-0 py-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </div>
