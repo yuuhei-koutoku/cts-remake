@@ -38,7 +38,7 @@
                     <div>
                         <span class="ligth-font pr-2">{{ $article->user->name }}</span>
                         <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
-                        <div class="aritcle-card">
+                        <div class="auth-dropup">
                             @if( Auth::id() === $article->user_id )
                             <!-- dropdown -->
                             <div class="ml-auto card-text">

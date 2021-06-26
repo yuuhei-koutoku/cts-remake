@@ -11,23 +11,23 @@
 <div class="container">
     <div class="col-md-12">
         <div class=h4><strong>コメント一覧</strong></div>
-            <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
-                <div class="card-body">
-                    @forelse($comments as $comment)
-                    <div class="my-3">
-                        {!! nl2br(e($comment->body)) !!}
-                        <div class="text-right">
-                            <span class="font-weight-lighter pr-2">{{ $comment->user->name }}</span>
-                            <span class="font-weight-lighter pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                            <div class="auth-dropdown">@include('comments.modal')</div>
-                        </div>
-                        <hr>
+        <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
+            <div class="card-body">
+                @forelse($comments as $comment)
+                <div class="my-3">
+                    {!! nl2br(e($comment->body)) !!}
+                    <div class="text-right">
+                        <span class="ligth-font pr-2">{{ $comment->user->name }}</span>
+                        <span class="ligth-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                        <div class="auth-dropup">@include('comments.modal')</div>
                     </div>
-                    @empty
-                    <p>コメントはまだありません。</p>
-                    @endforelse
+                    <hr>
                 </div>
+                @empty
+                <p>コメントはまだありません。</p>
+                @endforelse
             </div>
+        </div>
 
         @auth
         <form method="POST" action="{{ route('comments.store') }}">
@@ -39,6 +39,12 @@
             </button>
         </form>
         @endauth
+
+        <button type="button" class="btn btn-outline-default waves-effect my-5">
+            <a href="/" class="text-default">
+                <i class="fas fa-angle-double-left"></i> 投稿一覧に戻る
+            </a>
+        </button>
     </div>
 </div>
 @endsection
