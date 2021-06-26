@@ -44,7 +44,10 @@
                         <a href="{{ route('articles.create') }}">投稿する</a>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}">ログアウト</a>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                     @endauth
                 </ul>
