@@ -28,7 +28,7 @@
             @endif
             @endforeach
 
-            <div>
+            <div class="text-right">
                 <span class="ligth-font pr-2">{{ $article->user->name }}</span>
                 <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
                 <div class="auth-dropup">

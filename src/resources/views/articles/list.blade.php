@@ -1,6 +1,6 @@
 <div class="my-5">
     <div class="row">
-        
+
         <div class="col-md-3">
             <div class="view overlay">
                 @if ($article->image)
@@ -34,7 +34,7 @@
                 @endif
                 @endforeach
 
-                <div>
+                <div class="text-right">
                     <span class="ligth-font pr-2">{{ $article->user->name }}</span>
                     <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
                     <div class="auth-dropup">
