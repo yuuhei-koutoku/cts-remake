@@ -21,10 +21,22 @@
   color: silver;
 }
 
+/* 詳細ページ 画像リサイズ */
 .article-show-img {
   width: 100%;
   margin: 4rem 0;
 }
+
+
+/* フッター */
+footer {
+  padding-top: 24px;
+}
+
+.footer-list {
+  margin-right: 16px;
+}
+
 
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
@@ -55,3 +67,26 @@ width: 6px; }
 position: relative;
 overflow-y: scroll;
 height: 300px; }
+
+
+/* レスポンシブ対応(768px未満で適用) */
+@media screen and (max-width:768px) {
+  /* フッター */
+  footer {
+    padding-top: 0;
+  }
+
+  .site-remarks {
+    margin-bottom: 0;
+  }
+
+  .footer-ul{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-list {
+    margin: 0 16px;
+  }
+}

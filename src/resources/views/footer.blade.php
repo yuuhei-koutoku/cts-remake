@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small teal pt-4">
+<footer class="page-footer font-small teal">
 
     <!-- Footer Text -->
     <div class="container-fluid text-center text-md-left">
@@ -15,28 +15,28 @@
                     <i class="fas fa-building"></i>
                     <span class="logo_style">建設技術情報サイト</span>
                 </h5>
-                <p>このサイトは架空サイトです。<a href="https://www.decn.co.jp/" target="_blank" rel="noopener noreferrer"><u>日刊建設工業新聞</u></a>から引用しています。</p>
+                <p class="site-remarks">このサイトは架空サイトです。<a href="https://www.decn.co.jp/" target="_blank" rel="noopener noreferrer"><u>日刊建設工業新聞</u></a>から引用しています。</p>
 
             </div>
             <!-- Grid column -->
 
-            <hr class="clearfix w-100 d-md-none pb-3">
+            <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-6 mb-md-0 mb-3">
+            <div class="col-md-6 mb-md-0">
 
                 <!-- Content -->
                 <h5 class="text-uppercase font-weight-bold">リンク</h5>
-                <ul class="list-unstyled">
+                <ul class="d-flex flex-row list-unstyled footer-ul">
                     @guest
                     <li>
-                        <a href="{{ route('register') }}">ユーザー登録</a>
+                        <a href="{{ route('register') }}" class="footer-list">ユーザー登録</a>
                     </li>
                     <li>
-                        <a href="{{ route('login') }}">ログイン</a>
+                        <a href="{{ route('login') }}" class="footer-list">ログイン</a>
                     </li>
                     <li>
-                        <a href="{{ route('login.guest') }}">ゲストログイン</a>
+                        <a href="{{ route('login.guest') }}" class="footer-list">ゲストログイン</a>
                     </li>
                     @endguest
                     @auth
