@@ -41,10 +41,10 @@
                     @endguest
                     @auth
                     <li>
-                        <a href="{{ route('articles.create') }}">投稿する</a>
+                        <a href="{{ route('articles.create') }}" class="footer-list">投稿する</a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+                        <a href="#" class="footer-list" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

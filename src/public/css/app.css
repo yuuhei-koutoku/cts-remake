@@ -29,6 +29,15 @@
 
 
 /* フッター */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#app{
+  flex: 1;
+}
+
 footer {
   padding-top: 24px;
 }
