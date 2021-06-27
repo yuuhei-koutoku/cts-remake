@@ -122,7 +122,7 @@
         </form>
         @endauth
 
-        <button type="button" class="btn btn-outline-info waves-effect my-5">
+        <button type="button" class="btn btn-outline-info waves-effect my-5 ml-0">
             <a href="/" class="text-info">
                 <i class="fas fa-angle-double-left"></i> 投稿一覧に戻る
             </a>
