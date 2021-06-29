@@ -14,5 +14,4 @@
     @include('articles.list')
     @endforeach
 </div>
-@include('footer')
 @endsection
