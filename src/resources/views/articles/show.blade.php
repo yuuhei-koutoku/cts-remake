@@ -28,7 +28,7 @@
             @endif
             @endforeach
 
-            <div>
+            <div class="text-right">
                 <span class="ligth-font pr-2">{{ $article->user->name }}</span>
                 <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
                 <div class="auth-dropup">
@@ -83,7 +83,7 @@
             <img src="{{ $article->image }}" class="article-show-img my-3">
             @endif
 
-            <div class="text-dark pb-3">
+            <div class="article-show-font pb-3">
                 {{ $article->body }}
             </div>
         </div>
@@ -96,7 +96,7 @@
         <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
             <div class="card-body">
                 @forelse($comments as $comment)
-                <div class="my-3">
+                <div class="article-show-font my-3">
                     {!! nl2br(e($comment->body)) !!}
                     <div class="text-right">
                         <span class="ligth-font pr-2">{{ $comment->user->name }}</span>
@@ -106,7 +106,7 @@
                     <hr>
                 </div>
                 @empty
-                <p>コメントはまだありません。</p>
+                <p class="article-show-font">コメントはまだありません。</p>
                 @endforelse
             </div>
         </div>

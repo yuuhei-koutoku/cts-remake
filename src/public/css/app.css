@@ -48,6 +48,11 @@ footer {
   margin-right: 16px;
 }
 
+.article-show-font{
+  font-size: 18px;
+}
+
+
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
 -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
@@ -74,6 +79,9 @@ height: 300px; }
 
 /* レスポンシブ対応(768px未満で適用) */
 @media screen and (max-width:768px) {
+  .article-show-font{
+    font-size: 16px;
+  }
   /* フッターの余白を調整 */
   footer {
     padding-top: 0;
