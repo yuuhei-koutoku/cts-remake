@@ -47,7 +47,7 @@
 
             @auth
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">ユーザー名：{{ Auth::user()->name }}</a>
+                <a class="nav-link disabled" href="#"><img src="/images/user_icon.png" height="22px">ユーザー名：{{ Auth::user()->name }}</a>
             </li>
             @endauth
 
