@@ -29,8 +29,8 @@
             @endforeach
 
             <div class="text-right">
-                <span class="ligth-font pr-2">{{ $article->user->name }}</span>
-                <span class="ligth-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                <span class="light-font pr-2">{{ $article->user->name }}</span>
+                <span class="light-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
                 <div class="auth-dropup">
                     @if( Auth::id() === $article->user_id )
                     <!-- dropdown -->
@@ -99,8 +99,8 @@
                 <div class="article-show-font my-3">
                     {!! nl2br(e($comment->body)) !!}
                     <div class="text-right">
-                        <span class="ligth-font pr-2">{{ $comment->user->name }}</span>
-                        <span class="ligth-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                        <span class="light-font pr-2">{{ $comment->user->name }}</span>
+                        <span class="light-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
                         <div class="auth-dropup">@include('comments.modal')</div>
                     </div>
                     <hr>
