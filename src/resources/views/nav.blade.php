@@ -37,25 +37,18 @@
             @endauth
 
             @auth
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-hard-hat"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <button class="dropdown-item" type="submit">
-                        {{ Auth::user()->name }}
-                    </button>
-                    <div class="dropdown-divider"></div>
-                    <button form="logout-button" class="dropdown-item" type="submit">
-                        ログアウト
-                    </button>
-                </div>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-door-open"></i>ログアウト</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
-            <form id="logout-button" method="POST" action="{{ route('logout') }}">
-                @csrf
-            </form>
-            <!-- Dropdown -->
+            @endauth
+
+            @auth
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><img src="/images/user_icon.png" height="22px">ユーザー名：{{ Auth::user()->name }}</a>
+            </li>
             @endauth
 
         </ul>
