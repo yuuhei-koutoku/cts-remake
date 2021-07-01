@@ -1,14 +1,27 @@
-/* ロゴのフォント */
+/* ナビバー ロゴのフォント */
 .logo_style {
   font-family: 'Reggae One', cursive;
 }
 
-/* 3点リーダーをインラインブロックにする */
+/* 記事一覧、記事詳細 ユーザー名と日時のフォントサイズと色を編集 */
+.light-font {
+  font-size: 12px;
+  color: silver;
+}
+
+/* 記事一覧、記事詳細 3点リーダーをインラインブロックにする */
 .auth-dropup {
   display: inline-block;
 }
 
-/* 記事タイトルのフォントサイズと色を編集 */
+/* 記事一覧 画像リサイズ */
+.article-img {
+  width: 255px;
+  height: 143px;
+  margin: 0 auto;
+}
+
+/* 記事一覧 タイトルのフォントサイズと色を編集 */
 .article-title {
   font-size: 30px;
   color: black;
@@ -17,16 +30,14 @@
   color: silver;
 }
 
-/* ユーザー名と日時のフォントサイズと色を編集 */
-.ligth-font {
-  font-size: 12px;
-  color: silver;
-}
-
-/* 詳細ページ 画像リサイズ */
+/* 記事詳細 画像リサイズ */
 .article-show-img {
   width: 100%;
   margin: 4rem 0;
+}
+/* 記事詳細 文字サイズ */
+.article-show-font {
+  font-size: 18px;
 }
 
 /* フッター */
@@ -36,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-#app{
+#app {
   flex: 1;
 }
 /* フッターの余白を調整 */
@@ -46,10 +57,6 @@ footer {
 /* スマホ画面以外の時、フッターのリンクは左に寄せる */
 .footer-list {
   margin-right: 16px;
-}
-
-.article-show-font{
-  font-size: 18px;
 }
 
 
@@ -77,10 +84,34 @@ position: relative;
 overflow-y: scroll;
 height: 300px; }
 
-/* レスポンシブ対応(768px未満で適用) */
+/* レスポンシブ対応 576px未満で適用 スマートフォンサイズ（縦） */
+@media screen and (max-width:576px) {
+  /* 画像サイズ調整 */
+  .article-img {
+    width: 290px;
+    height: 160px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  /* 文字 横幅調整 */
+  .list-group {
+    width: 290px;
+    padding: 15px 0;
+  }
+}
+
+/* レスポンシブ対応 768px未満で適用 スマートフォンサイズ（横） */
 @media screen and (max-width:768px) {
-  .article-show-font{
+  /* 記事詳細ページ 文字サイズ変更 */
+  .article-show-font {
     font-size: 16px;
+  }
+  /* 画像サイズ調整 */
+  .article-img {
+    width: 540px;
+    height: 304px;
+    margin: 0 auto;
+    padding: 0;
   }
   /* フッターの余白を調整 */
   footer {
@@ -93,9 +124,19 @@ height: 300px; }
     margin: 0 16px;
   }
   /* リストを中央に配置 */
-  .footer-ul{
+  .footer-ul {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+}
+
+/* レスポンシブ対応 992px未満で適用 タブレットサイズ */
+@media screen and (max-width:992px) {
+  .article-show-font {
+    font-size: 16px;
+  }
+  .article-title {
+    font-size: 20px;
   }
 }
