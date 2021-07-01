@@ -91,10 +91,12 @@ height: 300px; }
     width: 290px;
     height: 160px;
     margin: 0 auto;
+    padding: 0;
   }
   /* 文字 横幅調整 */
   .list-group {
     width: 290px;
+    padding: 15px 0;
   }
 }
 
@@ -106,9 +108,10 @@ height: 300px; }
   }
   /* 画像サイズ調整 */
   .article-img {
-    width: 510px;
-    height: 287px;
+    width: 540px;
+    height: 304px;
     margin: 0 auto;
+    padding: 0;
   }
   /* フッターの余白を調整 */
   footer {
