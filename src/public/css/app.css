@@ -59,11 +59,6 @@ footer {
   margin-right: 16px;
 }
 
-/*
-.article-img-padding{
-
-}
-*/
 
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
@@ -111,8 +106,8 @@ height: 300px; }
   .article-img-padding {
     padding: 0;
   }
-  .list-group {
-    padding: 0;
+  .title-tag-other {
+    padding-left: 15px;
   }
   /* 記事詳細ページ 文字サイズ変更 */
   .article-show-font {
@@ -120,10 +115,8 @@ height: 300px; }
   }
   /* 画像サイズ調整 */
   .article-img-size {
-    width: 540px;
-    height: 304px;
-    margin: 0 auto;
-    padding: 0;
+    width: 510px;
+    height: 287px;
   }
   /* フッターの余白を調整 */
   footer {
@@ -147,15 +140,11 @@ height: 300px; }
 @media screen and (max-width:576px) {
   /* 画像サイズ調整 */
   .article-img-size {
-    width: 290px;
-    height: 160px;
-    margin: 0 auto;
-    padding: 0;
+    width:100%;
+    height: auto;
   }
   /* 文字 横幅調整 */
-  .list-group {
-    width: 290px;
-    padding: 15px 0;
-    margin: 0 auto;
+  .title-tag-other {
+    padding: 0 15px;
   }
 }

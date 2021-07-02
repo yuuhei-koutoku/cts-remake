@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="list-group col-md-7 col-lg-8 col-xl-9">
+        <div class="title-tag-other col-md-7 col-lg-8 col-xl-9">
             <div>
                 <h3>
                     <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
