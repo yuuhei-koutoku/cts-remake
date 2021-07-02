@@ -15,7 +15,7 @@
 }
 
 /* 記事一覧 画像リサイズ */
-.article-img {
+.article-img-size {
   width: 255px;
   height: 143px;
   margin: 0 auto;
@@ -59,6 +59,11 @@ footer {
   margin-right: 16px;
 }
 
+/*
+.article-img-padding{
+
+}
+*/
 
 /* コメント一覧 Scrollbar usage within cards */
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
@@ -84,30 +89,37 @@ position: relative;
 overflow-y: scroll;
 height: 300px; }
 
-/* レスポンシブ対応 576px未満で適用 スマートフォンサイズ（縦） */
-@media screen and (max-width:576px) {
-  /* 画像サイズ調整 */
-  .article-img {
-    width: 290px;
-    height: 160px;
-    margin: 0 auto;
-    padding: 0;
+/* レスポンシブ対応 1200px未満で適用 デスクトップサイズ */
+@media screen and (max-width:1200px) {
+  .article-title {
+    font-size: 25px;
   }
-  /* 文字 横幅調整 */
-  .list-group {
-    width: 290px;
-    padding: 15px 0;
+}
+
+/* レスポンシブ対応 992px未満で適用 タブレットサイズ */
+@media screen and (max-width:992px) {
+  .article-show-font {
+    font-size: 16px;
+  }
+  .article-title {
+    font-size: 20px;
   }
 }
 
 /* レスポンシブ対応 768px未満で適用 スマートフォンサイズ（横） */
 @media screen and (max-width:768px) {
+  .article-img-padding {
+    padding: 0;
+  }
+  .list-group {
+    padding: 0;
+  }
   /* 記事詳細ページ 文字サイズ変更 */
   .article-show-font {
     font-size: 16px;
   }
   /* 画像サイズ調整 */
-  .article-img {
+  .article-img-size {
     width: 540px;
     height: 304px;
     margin: 0 auto;
@@ -131,12 +143,19 @@ height: 300px; }
   }
 }
 
-/* レスポンシブ対応 992px未満で適用 タブレットサイズ */
-@media screen and (max-width:992px) {
-  .article-show-font {
-    font-size: 16px;
+/* レスポンシブ対応 576px未満で適用 スマートフォンサイズ（縦） */
+@media screen and (max-width:576px) {
+  /* 画像サイズ調整 */
+  .article-img-size {
+    width: 290px;
+    height: 160px;
+    margin: 0 auto;
+    padding: 0;
   }
-  .article-title {
-    font-size: 20px;
+  /* 文字 横幅調整 */
+  .list-group {
+    width: 290px;
+    padding: 15px 0;
+    margin: 0 auto;
   }
 }

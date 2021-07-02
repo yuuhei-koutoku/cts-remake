@@ -1,10 +1,10 @@
 <div class="my-5">
     <div class="row">
 
-        <div class="col-md-5 col-lg-4 col-xl-3">
+        <div class="article-img-padding col-md-5 col-lg-4 col-xl-3">
             <div class="view overlay">
                 @if ($article->image)
-                <img src="{{ $article->image }}" class="article-img" style="width:255px; height:143px; margin:0 auto;">
+                <img src="{{ $article->image }}" class="article-img-size">
                 <a href="{{ route('articles.show', ['article' => $article]) }}">
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -14,7 +14,7 @@
 
         <div class="list-group col-md-7 col-lg-8 col-xl-9">
             <div>
-                <h3 class="card-title">
+                <h3>
                     <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
                         {{ $article->title }}
                     </a>
