@@ -8,10 +8,8 @@
     <div>
         <div>
 
-            <h3 class="card-title mt-5">
-                <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
-                    {{ $article->title }}
-                </a>
+            <h3 class="article-title-show mt-5">
+                {{ $article->title }}
             </h3>
 
             @foreach($article->tags as $tag)
@@ -80,10 +78,10 @@
             </div>
 
             @if ($article->image)
-            <img src="{{ $article->image }}" class="article-show-img my-3">
+            <img src="{{ $article->image }}" class="article-img-size-show my-3">
             @endif
 
-            <div class="article-show-font pb-3">
+            <div class="body-font pb-3">
                 {{ $article->body }}
             </div>
         </div>
@@ -92,11 +90,11 @@
 
 <div class="container">
     <div class="col-md-12">
-        <div class=h4><strong>コメント一覧</strong></div>
+        <h4 class="comments-index">コメント一覧</h4>
         <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
             <div class="card-body">
                 @forelse($comments as $comment)
-                <div class="article-show-font my-3">
+                <div class="body-font my-3">
                     {!! nl2br(e($comment->body)) !!}
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
@@ -106,7 +104,7 @@
                     <hr>
                 </div>
                 @empty
-                <p class="article-show-font">コメントはまだありません。</p>
+                <p class="body-font">コメントはまだありません。</p>
                 @endforelse
             </div>
         </div>

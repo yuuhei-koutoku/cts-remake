@@ -4,7 +4,7 @@
         <div class="article-img-padding col-md-5 col-lg-4 col-xl-3">
             <div class="view overlay">
                 @if ($article->image)
-                <img src="{{ $article->image }}" class="article-img-size">
+                <img src="{{ $article->image }}" class="article-img-size-index">
                 <a href="{{ route('articles.show', ['article' => $article]) }}">
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -15,7 +15,7 @@
         <div class="title-tag-other col-md-7 col-lg-8 col-xl-9">
             <div>
                 <h3>
-                    <a class="article-title" href="{{ route('articles.show', ['article' => $article]) }}">
+                    <a class="article-title-index" href="{{ route('articles.show', ['article' => $article]) }}">
                         {{ $article->title }}
                     </a>
                 </h3>

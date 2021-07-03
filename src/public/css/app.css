@@ -1,47 +1,78 @@
-/* ナビバー ロゴのフォント */
+/* ナビゲーションバー ロゴの書式指定 */
 .logo_style {
   font-family: 'Reggae One', cursive;
 }
 
-/* 記事一覧、記事詳細 ユーザー名と日時のフォントサイズと色を編集 */
+/* 記事一覧、記事詳細 共通 */
+/* ユーザー名、日時 文字サイズと色を指定 */
 .light-font {
   font-size: 12px;
   color: silver;
 }
-
-/* 記事一覧、記事詳細 3点リーダーをインラインブロックにする */
+/* 3点リーダーをインラインブロックにする（日時の隣に配置するため） */
 .auth-dropup {
   display: inline-block;
 }
 
-/* 記事一覧 画像リサイズ */
-.article-img-size {
+/* 記事一覧 */
+/* 画像 サイズ指定 */
+.article-img-size-index {
   width: 255px;
   height: 143px;
   margin: 0 auto;
 }
-
-/* 記事一覧 タイトルのフォントサイズと色を編集 */
-.article-title {
+/* タイトル 文字サイズと色を指定 */
+.article-title-index {
   font-size: 30px;
   color: black;
 }
-.article-title:hover {
+.article-title-index:hover {
   color: silver;
 }
 
-/* 記事詳細 画像リサイズ */
-.article-show-img {
+/* 記事詳細 */
+/* 画像 サイズ指定 */
+.article-img-size-show {
   width: 100%;
   margin: 4rem 0;
 }
-/* 記事詳細 文字サイズ */
-.article-show-font {
+/* 本文、コメント 文字サイズ指定 */
+.body-font {
   font-size: 18px;
+}
+/* コメント一覧 Scrollbar usage within cards */
+.scrollbar-dusty-grass::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px;
+}
+.scrollbar-dusty-grass::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5;
+}
+.scrollbar-dusty-grass::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);
+background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.square::-webkit-scrollbar-track {
+border-radius: 0 !important;
+}
+.square::-webkit-scrollbar-thumb {
+border-radius: 0 !important;
+}
+.thin::-webkit-scrollbar {
+width: 6px;
+}
+.example-1 {
+position: relative;
+overflow-y: scroll;
+height: 300px;
 }
 
 /* フッター */
-/* 記事が少ないときでもフッターを固定するための処理 */
+/* 記事が少ないときでも位置を固定するための処理 */
 body {
   min-height: 100vh;
   display: flex;
@@ -50,75 +81,58 @@ body {
 #app {
   flex: 1;
 }
-/* フッターの余白を調整 */
+/* 余白調整 */
 footer {
   padding-top: 24px;
 }
-/* スマホ画面以外の時、フッターのリンクは左に寄せる */
+/* リンク 余白調整（スマホ画面以外の時、リンクは左側に配置） */
 .footer-list {
   margin-right: 16px;
 }
 
-
-/* コメント一覧 Scrollbar usage within cards */
-.scrollbar-dusty-grass::-webkit-scrollbar-track {
--webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-background-color: #F5F5F5;
-border-radius: 10px; }
-.scrollbar-dusty-grass::-webkit-scrollbar {
-width: 12px;
-background-color: #F5F5F5; }
-.scrollbar-dusty-grass::-webkit-scrollbar-thumb {
-border-radius: 10px;
--webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);
-background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); }
-.square::-webkit-scrollbar-track {
-border-radius: 0 !important; }
-.square::-webkit-scrollbar-thumb {
-border-radius: 0 !important; }
-.thin::-webkit-scrollbar {
-width: 6px; }
-.example-1 {
-position: relative;
-overflow-y: scroll;
-height: 300px; }
-
-/* レスポンシブ対応 1200px未満で適用 デスクトップサイズ */
+/* レスポンシブ対応 */
+/* 1200px未満で適用 デスクトップサイズ */
 @media screen and (max-width:1200px) {
-  .article-title {
+  /* 記事一覧 タイトル 文字サイズ調整 */
+  .article-title-index {
     font-size: 25px;
   }
 }
-
-/* レスポンシブ対応 992px未満で適用 タブレットサイズ */
+/* 992px未満で適用 タブレットサイズ */
 @media screen and (max-width:992px) {
-  .article-show-font {
-    font-size: 16px;
-  }
-  .article-title {
+  /* 記事一覧 タイトル 文字サイズ調整 */
+  .article-title-index {
     font-size: 20px;
   }
+  /* 記事詳細 タイトル 文字サイズ調整 */
+  .article-title-show {
+    font-size: 24px;
+  }
+  /* 記事詳細 タイトル（コメント一覧） 文字サイズ調整 */
+  .comments-index{
+    font-size: 20px;
+  }
+  /* 記事詳細 本文、コメント 文字サイズ調整 */
+  .body-font {
+    font-size: 16px;
+  }
 }
-
-/* レスポンシブ対応 768px未満で適用 スマートフォンサイズ（横） */
+/* 768px未満で適用 スマートフォンサイズ（横） */
 @media screen and (max-width:768px) {
+  /* 記事一覧 画像 余白調整 */
   .article-img-padding {
     padding: 0;
   }
+  /* 記事一覧 画像以外 余白調整 */
   .title-tag-other {
     padding-left: 15px;
   }
-  /* 記事詳細ページ 文字サイズ変更 */
-  .article-show-font {
-    font-size: 16px;
-  }
-  /* 画像サイズ調整 */
-  .article-img-size {
+  /* 記事一覧 画像 サイズ調整 */
+  .article-img-size-index {
     width: 510px;
     height: 287px;
   }
-  /* フッターの余白を調整 */
+  /* フッター 余白調整 */
   footer {
     padding-top: 0;
   }
@@ -128,22 +142,21 @@ height: 300px; }
   .footer-list {
     margin: 0 16px;
   }
-  /* リストを中央に配置 */
+  /* フッター リストを中央に配置 */
   .footer-ul {
     justify-content: center;
     align-items: center;
     text-align: center;
   }
 }
-
-/* レスポンシブ対応 576px未満で適用 スマートフォンサイズ（縦） */
+/* 576px未満で適用 スマートフォンサイズ（縦） */
 @media screen and (max-width:576px) {
-  /* 画像サイズ調整 */
-  .article-img-size {
+  /* 記事一覧 画像 サイズ調整 */
+  .article-img-size-index {
     width:100%;
     height: auto;
   }
-  /* 文字 横幅調整 */
+  /* 記事一覧 画像以外 余白調整 */
   .title-tag-other {
     padding: 0 15px;
   }
