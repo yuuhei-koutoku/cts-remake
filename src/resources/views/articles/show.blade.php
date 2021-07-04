@@ -28,7 +28,7 @@
 
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
-                <span class="light-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
                 @if( Auth::id() === $article->user_id )
                 <div class="auth-dropup">
                     <!-- dropdown -->
@@ -98,7 +98,7 @@
                     {!! nl2br(e($comment->body)) !!}
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
-                        <span class="light-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                        <span class="light-font pr-2">{{ $comment->created_at->format('Y年n月j日 H時i分') }}</span>
                         @include('comments.modal')
                     </div>
                     <hr>
