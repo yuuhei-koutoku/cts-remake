@@ -29,8 +29,8 @@
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
                 <span class="light-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                @if( Auth::id() === $article->user_id )
                 <div class="auth-dropup">
-                    @if( Auth::id() === $article->user_id )
                     <!-- dropdown -->
                     <div class="ml-auto card-text">
                         <div class="dropup">
@@ -73,8 +73,8 @@
                         </div>
                     </div>
                     <!-- modal -->
-                    @endif
                 </div>
+                @endif
             </div>
 
             @if ($article->image)
@@ -99,7 +99,7 @@
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
                         <span class="light-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                        <div class="auth-dropup">@include('comments.modal')</div>
+                        @include('comments.modal')
                     </div>
                     <hr>
                 </div>
