@@ -28,7 +28,7 @@
 
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
-                <span class="light-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
                 @if( Auth::id() === $article->user_id )
                 <div class="auth-dropup">
                     <!-- dropdown -->
@@ -98,7 +98,7 @@
                     {!! nl2br(e($comment->body)) !!}
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
-                        <span class="light-font pr-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                        <span class="light-font pr-2">{{ $comment->created_at->format('Y年n月j日 H時i分') }}</span>
                         @include('comments.modal')
                     </div>
                     <hr>
@@ -112,8 +112,9 @@
         @auth
         <form method="POST" action="{{ route('comments.store') }}">
             @csrf
+            @include('error_card_list')
             <input type="hidden" name="article_id" value="{{$article->id}}">
-            <textarea class="form-control mb-2" name="body" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
+            <textarea class="form-control mb-2" name="body" rows="4" placeholder="コメント">{{ old('comment') }}</textarea>
             <button type="submit" class="btn aqua-gradient btn-block">
                 <i class="fas fa-pen mr-1"></i>コメントを送信する
             </button>

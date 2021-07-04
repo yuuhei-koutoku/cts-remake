@@ -14,19 +14,19 @@
 
                 @include('error_card_list')
 
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" required placeholder="ユーザー名">
+                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" placeholder="ユーザー名">
                 <small class="form-text text-muted mb-4">
                     (登録後の変更はできません)
                 </small>
 
-                <input class="form-control mb-4" type="text" id="email" name="email" value="{{ old('email') }}" required placeholder="メールアドレス">
+                <input class="form-control mb-4" type="text" id="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス">
 
-                <input class="form-control" type="password" id="password" name="password" required placeholder="パスワード">
+                <input class="form-control" type="password" id="password" name="password" placeholder="パスワード">
                 <small class="form-text text-muted mb-4">
                     (半角英字（小文字）、半角英字（大文字）、半角数字を少なくとも１文字以上含む8文字以上)
                 </small>
 
-                <input class="form-control mb-4" type="password" id="password_confirmation" name="password_confirmation" required placeholder="パスワード（確認）">
+                <input class="form-control mb-4" type="password" id="password_confirmation" name="password_confirmation" placeholder="パスワード（確認）">
 
                 <button class="btn aqua-gradient mb-2 btn-block" type="submit">ユーザー登録</button>
 

@@ -8,6 +8,11 @@
                 <a href="{{ route('articles.show', ['article' => $article]) }}">
                     <div class="mask rgba-white-slight"></div>
                 </a>
+                @else
+                <img src="/images/no_image.jpg" class="article-img-size-index">
+                <a href="{{ route('articles.show', ['article' => $article]) }}">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
                 @endif
             </div>
         </div>
@@ -36,7 +41,7 @@
 
                 <div class="text-right">
                     <span class="light-font pr-2">{{ $article->user->name }}</span>
-                    <span class="light-font pr-2">{{ $article->created_at->format('Y/m/d H:i') }}</span>
+                    <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
                     @if( Auth::id() === $article->user_id )
                     <div class="auth-dropup">
                         <!-- dropdown -->
