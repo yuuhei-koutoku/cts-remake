@@ -112,8 +112,9 @@
         @auth
         <form method="POST" action="{{ route('comments.store') }}">
             @csrf
+            @include('error_card_list')
             <input type="hidden" name="article_id" value="{{$article->id}}">
-            <textarea class="form-control mb-2" name="body" rows="4" placeholder="コメントを入力してください。">{{ old('comment') }}</textarea>
+            <textarea class="form-control mb-2" name="body" rows="4" placeholder="コメント">{{ old('comment') }}</textarea>
             <button type="submit" class="btn aqua-gradient btn-block">
                 <i class="fas fa-pen mr-1"></i>コメントを送信する
             </button>

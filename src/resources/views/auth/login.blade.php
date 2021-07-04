@@ -14,9 +14,9 @@
 
                 @include('error_card_list')
 
-                <input class="form-control mb-4" type="text" id="email" name="email" value="{{ old('email') }}" required placeholder="メールアドレス">
+                <input class="form-control mb-4" type="text" id="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス">
 
-                <input class="form-control mb-4" type="password" id="password" name="password" required placeholder="パスワード">
+                <input class="form-control mb-4" type="password" id="password" name="password" placeholder="パスワード">
 
                 <input type="hidden" name="remember" id="remember" value="on">
 
