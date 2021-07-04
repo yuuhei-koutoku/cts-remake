@@ -8,6 +8,11 @@
                 <a href="{{ route('articles.show', ['article' => $article]) }}">
                     <div class="mask rgba-white-slight"></div>
                 </a>
+                @else
+                <img src="/images/no_image.jpg" class="article-img-size-index">
+                <a href="{{ route('articles.show', ['article' => $article]) }}">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
                 @endif
             </div>
         </div>
