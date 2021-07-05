@@ -20,7 +20,7 @@
     @foreach($articles as $article)
     @include('articles.list')
     @endforeach
-    {{ $articles->links() }}
+    {{ $articles->links('pagination::default') }}
 </div>
 </div>
 @include('footer')
