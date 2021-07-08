@@ -1,5 +1,5 @@
 @csrf
-<div class="container my-5">
+<div class="container mt-5">
     <div class="row">
         <div class="offset-md-2 col-md-8">
             @include('error_card_list')
