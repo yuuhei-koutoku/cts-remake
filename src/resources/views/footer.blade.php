@@ -62,8 +62,8 @@
     <!-- Footer Text -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy; 2021 Copyright:
-        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center py-3">
+        &copy; 2021 Yuhei Kotoku
     </div>
     <!-- Copyright -->
 
