@@ -65,7 +65,7 @@ class ArticlePolicy
      */
     public function delete(User $user, Article $article)
     {
-        $user->id === $article->user_id;
+        return $user->id === $article->user_id;
     }
 
     /**
