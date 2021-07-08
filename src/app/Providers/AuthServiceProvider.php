@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-// use App\Article;
-// use App\Policies\ArticlePolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -16,7 +14,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-        // Article::class => ArticlePolicy::class,
     ];
 
     /**
@@ -28,15 +25,5 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        /*
-        Gate::guessPolicyNamesUsing(function ($user,$article) {
-            return $user->id === $article->user_id;
-        });
-        */
-        /*
-        Gate::define('delete-article', function ($user, $article) {
-            return $user->id === $article->user_id;
-        });
-        */
     }
 }

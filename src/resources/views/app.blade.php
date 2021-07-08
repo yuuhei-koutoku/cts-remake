@@ -26,6 +26,7 @@
     <div id="app">
         @yield('content')
     </div>
+    @include('footer')
 
     <script src="{{ mix('js/app.js') }}">
     </script>
@@ -38,7 +39,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 
-    
+
 </body>
 
 </html>

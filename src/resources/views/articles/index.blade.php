@@ -22,6 +22,5 @@
     @endforeach
     {{ $articles->links('pagination::default') }}
 </div>
-</div>
-@include('footer')
+
 @endsection

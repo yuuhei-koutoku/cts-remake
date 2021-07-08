@@ -22,11 +22,9 @@
 
                 <button class="btn aqua-gradient btn-block mb-2" type="submit">ログイン</button>
 
-                <button class="btn btn-block peach-gradient mb-2">
-                    <a href="{{ route('login.guest') }}" class="text-white">
-                        ゲストログイン
-                    </a>
-                </button>
+                <a href="{{ route('login.guest') }}" class="btn btn-block peach-gradient mb-2 text-white">
+                    ゲストログイン
+                </a>
 
                 <div class="mt-0">
                     <a href="{{ route('register') }}" class="text-muted">ユーザー登録はこちら</a>
