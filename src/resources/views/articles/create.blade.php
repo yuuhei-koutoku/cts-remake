@@ -10,7 +10,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="offset-2 col-8">
+                <div class="offset-md-2 col-md-8">
                     <div>
                         <button type="submit" class="btn aqua-gradient btn-block"><i class="fas fa-pen mr-1"></i>投稿する</button>
                     </div>
