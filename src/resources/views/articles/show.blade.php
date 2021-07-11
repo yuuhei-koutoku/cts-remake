@@ -99,7 +99,7 @@
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
                         <span class="light-font pr-2">{{ $comment->created_at->format('Y年n月j日 H時i分') }}</span>
-                        @include('comments.modal')
+                        @include('comments.dropup')
                     </div>
                     <hr>
                 </div>
