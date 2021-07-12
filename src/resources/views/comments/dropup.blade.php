@@ -1,5 +1,6 @@
 @if( Auth::id() === $comment->user_id )
 <div class="auth-dropup">
+
     <!-- dropdown -->
     <div class="ml-auto card-text">
         <div class="dropdown">
@@ -43,5 +44,6 @@
         </div>
     </div>
     <!-- modal -->
+
 </div>
 @endif

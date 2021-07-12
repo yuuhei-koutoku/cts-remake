@@ -1,5 +1,6 @@
 @if( Auth::id() === $article->user_id )
 <div class="auth-dropup">
+
     <!-- dropdown -->
     <div class="ml-auto card-text">
         <div class="dropup">
@@ -18,6 +19,7 @@
         </div>
     </div>
     <!-- dropdown -->
+
     <!-- modal -->
     <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -42,5 +44,6 @@
         </div>
     </div>
     <!-- modal -->
+
 </div>
 @endif
