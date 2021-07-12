@@ -1,6 +1,7 @@
 <div class="my-5">
     <div class="row">
 
+        <!-- image -->
         <div class="article-img-padding col-md-5 col-lg-4 col-xl-3">
             <div class="view overlay">
                 @if ($article->image)
@@ -16,35 +17,42 @@
                 @endif
             </div>
         </div>
+        <!-- image -->
 
         <div class="title-tag-other col-md-7 col-lg-8 col-xl-9">
-            <div>
-                <h3>
-                    <a class="article-title-index" href="{{ route('articles.show', ['article' => $article]) }}">
-                        {{ $article->title }}
+
+            <!-- title -->
+            <h3>
+                <a class="article-title-index" href="{{ route('articles.show', ['article' => $article]) }}">
+                    {{ $article->title }}
+                </a>
+            </h3>
+            <!-- title -->
+
+            <!-- tag -->
+            @foreach($article->tags as $tag)
+            @if($loop->first)
+            <div class="pt-0 pb-3">
+                <div class="card-text line-height">
+                    @endif
+                    <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
+                        {{ $tag->name }}
                     </a>
-                </h3>
-
-                @foreach($article->tags as $tag)
-                @if($loop->first)
-                <div class="pt-0 pb-3">
-                    <div class="card-text line-height">
-                        @endif
-                        <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
-                            {{ $tag->name }}
-                        </a>
-                        @if($loop->last)
-                    </div>
-                </div>
-                @endif
-                @endforeach
-
-                <div class="text-right">
-                    <span class="light-font pr-2">{{ $article->user->name }}</span>
-                    <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
-                    @include('articles.dropup')
+                    @if($loop->last)
                 </div>
             </div>
+            @endif
+            @endforeach
+            <!-- tag -->
+
+            <!-- name,time,dropup -->
+            <div class="text-right">
+                <span class="light-font pr-2">{{ $article->user->name }}</span>
+                <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
+                @include('articles.dropup')
+            </div>
+            <!-- name,time,dropup -->
+            
         </div>
     </div>
 </div>
