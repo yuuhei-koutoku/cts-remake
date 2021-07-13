@@ -8,10 +8,12 @@
     <div>
         <div>
 
+            <!-- titel -->
             <h3 class="article-title-show mt-5">
                 {{ $article->title }}
             </h3>
 
+            <!-- tag -->
             @foreach($article->tags as $tag)
             @if($loop->first)
             <div class="pt-0 pb-3">
@@ -26,19 +28,23 @@
             @endif
             @endforeach
 
+            <!-- name,time,dropup -->
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
                 <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
                 @include('articles.dropup')
             </div>
 
+            <!-- image -->
             @if ($article->image)
             <img src="{{ $article->image }}" class="article-img-size-show my-3">
             @endif
 
+            <!-- body -->
             <div class="body-font pb-3">
                 {{ $article->body }}
             </div>
+
         </div>
     </div>
 </div>
@@ -50,12 +56,17 @@
             <div class="card-body">
                 @forelse($comments as $comment)
                 <div class="body-font my-3">
+
+                    <!-- title -->
                     {!! nl2br(e($comment->body)) !!}
+
+                    <!-- name,time,dropup -->
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
                         <span class="light-font pr-2">{{ $comment->created_at->format('Y年n月j日 H時i分') }}</span>
                         @include('comments.dropup')
                     </div>
+                    
                     <hr>
                 </div>
                 @empty
