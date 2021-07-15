@@ -19,6 +19,7 @@ class CommentController extends Controller
         $comment->fill($array);
         $comment->user_id = $request->user()->id;
         $comment->save();
+
         return redirect()->route('articles.show', ['article' => $array['article_id']]);
     }
 

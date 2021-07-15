@@ -56,7 +56,7 @@ class ArticleController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             // 画像の名前を取得
             $filename = $request->file('image')->getClientOriginalName();
-            // 画像をリサイズ
+            // 画像ファイルを変数に代入
             $resize_img = InterventionImage::make($file)->encode($extension);
             // バケットの`myprefix`フォルダへアップロード
             $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
@@ -108,12 +108,14 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
+
         return redirect()->route('articles.index');
     }
 
     public function show(Article $article)
     {
         $comments = $article->comments;
+
         return view('articles.show', ['article' => $article, 'comments' => $comments]);
     }
 }
