@@ -21,7 +21,6 @@
                 <input type="hidden" name="remember" id="remember" value="on">
 
                 <button class="btn aqua-gradient btn-block mb-2" type="submit">ログイン</button>
-
                 <a href="{{ route('login.guest') }}" class="btn btn-block peach-gradient mb-2 text-white">
                     ゲストログイン
                 </a>
