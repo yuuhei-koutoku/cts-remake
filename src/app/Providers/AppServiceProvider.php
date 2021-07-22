@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-// use Illuminate\Support\Facades\View;
 use Illuminate\Routing\UrlGenerator;
 
 
@@ -26,11 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url)
     {
-        // Viewファサードのshareメソッドを使うことで、全ビューで使える変数を定義(完全SSL化)
-        // $is_production = env('APP_ENV') === 'production' ? true : false;
-        // View::share('is_production', $is_production);
-
-        // \URL::forceSchema('https');
+        // 常時SSL化
         $url->forceScheme('https');
     }
 }
