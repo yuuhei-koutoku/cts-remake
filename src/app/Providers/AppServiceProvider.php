@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Viewファサードのshareメソッドを使うことで、全ビューで使える変数を定義(完全SSL化)
         $is_production = env('APP_ENV') === 'production' ? true : false;
         View::share('is_production', $is_production);
     }
