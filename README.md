@@ -69,7 +69,7 @@ $ docker-compose exec app npm run watch-poll
     - 削除
 
 ## DB設計
-<img src="/images/cts-remake_erd.PNG" alt="erd_image">
+<img src="public/images/cts-remake_erd.PNG" alt="erd_image">
 
 ## インフラ構成図
 <インフラ構成図>
