@@ -69,15 +69,7 @@ $ docker-compose exec app npm run watch-poll
     - 削除
 
 ## DB設計
-![erd-image](./docs/images/cts-remake_erd.PNG)
-![erd-image](/images/cts-remake_erd.PNG)
-![erd-image](image/cts-remake_erd.PNG)
-![erd-image](https://github.com/yuuhei-koutoku/cts-remake/blob/master/src/public/images/cts-remake_erd.PNG)
 ![erd-image](/src/public/images/cts-remake_erd.PNG)
-<img src="/images/cts-remake_erd.PNG" alt="erd_image">
-<img src="public/images/cts-remake_erd.PNG" alt="erd_image">
-<img src="/yuuhei-kouktoku/cts-remake/raw/master/public/images/cts-remake_erd.PNG" alt="erd_image">
-<img src="https://github.com/yuuhei-koutoku/cts-remake/blob/master/src/public/images/cts-remake_erd.PNG" alt="erd_image">
 
 ## インフラ構成図
 <インフラ構成図>
