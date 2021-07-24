@@ -1,7 +1,6 @@
 @if( Auth::id() === $comment->user_id )
 <div class="auth-dropup">
-
-    <!-- dropdown -->
+    <!-- 3点リーダー -->
     <div class="ml-auto card-text">
         <div class="dropdown">
             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,9 +17,8 @@
             </div>
         </div>
     </div>
-    <!-- dropdown -->
 
-    <!-- modal -->
+    <!-- 削除モーダル画面 -->
     <div id="modal-delete-{{ $comment->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -43,7 +41,5 @@
             </div>
         </div>
     </div>
-    <!-- modal -->
-
 </div>
 @endif
