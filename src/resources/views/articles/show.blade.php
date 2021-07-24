@@ -37,7 +37,7 @@
             @endif
             <!-- body -->
             <div class="body-font pb-3">
-                {{ $article->body }}
+                {!! nl2br(e($article->body)) !!}
             </div>
         </div>
     </div>
