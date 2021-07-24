@@ -69,7 +69,23 @@ $ docker-compose exec app npm run watch-poll
     - 削除
 
 ## DB設計
+### ER図
 ![erd-image](/src/public/images/cts-remake_erd.PNG)
+### テーブル設計
+#### usersテーブル
+ユーザーを管理する。nameにユニーク制約を追加している。
+
+#### articlesテーブル
+記事を管理する。
+
+#### commentsテーブル
+コメントを管理する。
+
+#### tagsテーブル
+タグ名を管理する。同じタグ名のレコードが重複することの無いよう、nameにはユニーク制約を付けている。
+
+#### article_tagテーブル
+「どの記事に」「何のタグが」付いているかを管理する。articlesテーブルとtagsテーブルを紐付ける中間テーブル。
 
 ## インフラ構成図
 <インフラ構成図>
