@@ -1,6 +1,6 @@
 <div class="my-5">
     <div class="row">
-        <!-- image -->
+        <!-- 記事 画像 -->
         <div class="article-img-padding col-md-5 col-lg-4 col-xl-3">
             <div class="view overlay">
                 @if ($article->image)
@@ -18,13 +18,13 @@
         </div>
 
         <div class="title-tag-other col-md-7 col-lg-8 col-xl-9">
-            <!-- title -->
+            <!-- 記事 タイトル -->
             <h3>
                 <a class="article-title-index" href="{{ route('articles.show', ['article' => $article]) }}">
                     {{ $article->title }}
                 </a>
             </h3>
-            <!-- tag -->
+            <!-- 記事 タグ -->
             @foreach($article->tags as $tag)
             @if($loop->first)
             <div class="pt-0 pb-3">
@@ -38,7 +38,7 @@
             </div>
             @endif
             @endforeach
-            <!-- name,time,dropup -->
+            <!-- 記事 投稿者名、日時、3点リーダー -->
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
                 <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>

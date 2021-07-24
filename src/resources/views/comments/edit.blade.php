@@ -9,6 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-2 col-md-8">
+            <!-- コメント 編集フォーム -->
             <form method="POST" action="{{ route('comments.update', ['comment' => $comment]) }}" class="mb-0">
                 @csrf
                 @method('PATCH')
