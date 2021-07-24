@@ -5,9 +5,12 @@
 @section('content')
 @include('nav')
 <div class="container">
+    <!-- トップページ画像 -->
     @guest
     <img src="/images/Construction-pana_r1.png" width="100%">
     @endguest
+
+    <!-- 検索フォーム -->
     <div class="row">
         <div class="col-12">
             <form method="GET" action="{{ route('articles.index') }}" class="d-flex">
@@ -17,9 +20,11 @@
         </div>
     </div>
 
+    <!-- 記事一覧 -->
     @foreach($articles as $article)
     @include('articles.list')
     @endforeach
+
     {{ $articles->links('pagination::default') }}
 </div>
 

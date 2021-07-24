@@ -7,11 +7,11 @@
 <div class="container mb-5">
     <div>
         <div>
-            <!-- titel -->
+            <!-- 記事 タイトル -->
             <h3 class="article-title-show mt-5">
                 {{ $article->title }}
             </h3>
-            <!-- tag -->
+            <!-- 記事 タグ -->
             @foreach($article->tags as $tag)
             @if($loop->first)
             <div class="pt-0 pb-3">
@@ -25,17 +25,17 @@
             </div>
             @endif
             @endforeach
-            <!-- name,time,dropup -->
+            <!-- 記事 投稿者名、日時、3点リーダー -->
             <div class="text-right">
                 <span class="light-font pr-2">{{ $article->user->name }}</span>
                 <span class="light-font pr-2">{{ $article->created_at->format('Y年n月j日 H時i分') }}</span>
                 @include('articles.dropup')
             </div>
-            <!-- image -->
+            <!-- 記事 画像 -->
             @if ($article->image)
             <img src="{{ $article->image }}" class="article-img-size-show my-3">
             @endif
-            <!-- body -->
+            <!-- 記事 本文 -->
             <div class="body-font pb-3">
                 {!! nl2br(e($article->body)) !!}
             </div>
@@ -50,9 +50,9 @@
             <div class="card-body">
                 @forelse($comments as $comment)
                 <div class="body-font my-3">
-                    <!-- title -->
+                    <!-- コメント -->
                     {!! nl2br(e($comment->body)) !!}
-                    <!-- name,time,dropup -->
+                    <!-- コメント 投稿者名、日時、3点リーダー -->
                     <div class="text-right">
                         <span class="light-font pr-2">{{ $comment->user->name }}</span>
                         <span class="light-font pr-2">{{ $comment->created_at->format('Y年n月j日 H時i分') }}</span>
@@ -66,6 +66,7 @@
             </div>
         </div>
 
+        <!-- コメント 入力フォーム -->
         @auth
         <form method="POST" action="{{ route('comments.store') }}">
             @csrf

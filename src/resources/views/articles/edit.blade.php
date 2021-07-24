@@ -7,6 +7,7 @@
 @section('content')
 <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}" enctype="multipart/form-data">
     @method('PATCH')
+    <!-- 記事 入力フォーム -->
     @include('articles.form')
     <div class="container">
         <div class="row">

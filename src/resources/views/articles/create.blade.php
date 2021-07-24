@@ -6,6 +6,7 @@
 
 @section('content')
 <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
+    <!-- 記事 入力フォーム -->
     @include('articles.form')
     <div class="container">
         <div class="row">
