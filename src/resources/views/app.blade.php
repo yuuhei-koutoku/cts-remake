@@ -28,8 +28,8 @@
     </div>
     @include('footer')
 
-    <script src="{{ mix('js/app.js') }}">
-    </script>
+    <!-- トランスパイルしたJavaScriptをBladeに読み込ませ、Vueコンポーネントを各Bladeで使用可能にする -->
+    <script src="{{ mix('js/app.js') }}"></script>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -39,7 +39,5 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 
-
 </body>
-
 </html>
