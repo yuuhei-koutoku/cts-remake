@@ -122,4 +122,4 @@ $ docker-compose exec app npm run watch-poll
 | updated_at | 日付と時刻 | 更新日時                |
 
 ## インフラ構成図
-<インフラ構成図>
+![infra-image](/src/public/images/cts-remake_infra.PNG)
