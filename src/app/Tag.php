@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
+    //nameプロパティをセットしてタグモデルを保存（tagsテーブルにレコードを保存）
     protected $fillable = [
         'name',
     ];

@@ -6,11 +6,12 @@ use App\Article;
 use App\Tag;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use \InterventionImage;
+use Illuminate\Support\Facades\Storage; // 画像投稿機能 storage_facadeをインポート
+use \InterventionImage; // 画像投稿機能 設定ファイル（config/app.php）の内容を反映
 
 class ArticleController extends Controller
 {
+    // ポリシーをコントローラーで使用
     public function __construct()
     {
         $this->authorizeResource(Article::class, 'article');
@@ -22,7 +23,7 @@ class ArticleController extends Controller
         $search = $request->input('search');
         // クエリ生成
         $query = Article::query();
-        // タイトルと本文の曖昧検索を実施
+        // タイトルと本文の部分一致検索を実施
         if (!empty($search)) {
             $query->where('title', 'LIKE', "%{$search}%")
             ->orWhere('body', 'LIKE', "%{$search}%");
@@ -35,10 +36,10 @@ class ArticleController extends Controller
 
     public function create()
     {
+        // タグテーブルから全てのタグ情報を取得し、Bladeに変数$allTagNamesとして渡す
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
-
         return view('articles.create', [
             'allTagNames' => $allTagNames,
         ]);
@@ -46,6 +47,7 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request, Article $article)
     {
+        // Artcleモデルのfillableプロパティ内に指定しておいたプロパティを、$articleの各プロパティに代入
         $article->fill($request->all());
 
         // 画像投稿機能
@@ -64,9 +66,11 @@ class ArticleController extends Controller
             $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
         }
 
+        // userメソッドでリクエストしたユーザーのidを取得し、Articleモデルのインスタンスのuser_idプロパティに代入
         $article->user_id = $request->user()->id;
         $article->save();
 
+        // タグの登録と記事・タグの紐付け
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $article->tags()->attach($tag);
@@ -77,10 +81,10 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
+        // タグテーブルから全てのタグ情報を取得し、Bladeに変数$allTagNamesとして渡す
         $tagNames = $article->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
-
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
@@ -94,8 +98,10 @@ class ArticleController extends Controller
 
     public function update(ArticleRequest $request, Article $article)
     {
+        // モデルのfillメソッドの戻り値はそのモデル自身なので、そのままsaveメソッドを繋げて使う
         $article->fill($request->all())->save();
 
+        // タグの登録と記事・タグの紐付け登録・削除
         $article->tags()->detach();
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);

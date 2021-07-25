@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
+    // タグ別記事一覧画面のアクションメソッド
     public function show(string $name)
     {
         $tag = Tag::where('name', $name)->first();

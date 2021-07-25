@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!--
+      type属性がhiddenであるinputタグを追加
+      value属性は算出プロパティtagsJsonとする
+    -->
     <input
       type="hidden"
       name="tags"
@@ -24,10 +28,12 @@ export default {
     VueTagsInput,
   },
   props: {
+    // Bladeから渡されたタグ情報は、プロパティinitialTagsで受け取る
     initialTags: {
       type: Array,
       default: [],
     },
+    // 全タグ情報をVue Tags Inputでの自動補完に使用
     autocompleteItems: {
       type: Array,
       default: [],
@@ -36,7 +42,7 @@ export default {
   data() {
     return {
       tag: '',
-      tags: this.initialTags,
+      tags: this.initialTags, //初期値としてセット
     };
   },
   computed: {

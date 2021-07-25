@@ -7,6 +7,7 @@
                 <input type="text" name="title" class="form-control" value="{{ $article->title ?? old('title') }}" placeholder="タイトル">
             </div>
             <div class="mb-3">
+                <!-- 入力フォームのBladeにVueコンポーネントを組み込む -->
                 <article-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'>
                 </article-tags-input>
             </div>
