@@ -6,8 +6,8 @@ use App\Article;
 use App\Tag;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage; //画像投稿機能 storage_facadeをインポート
-use \InterventionImage; //画像投稿機能 設定ファイル（config/app.php）の内容を反映
+use Illuminate\Support\Facades\Storage; // 画像投稿機能 storage_facadeをインポート
+use \InterventionImage; // 画像投稿機能 設定ファイル（config/app.php）の内容を反映
 
 class ArticleController extends Controller
 {
@@ -36,10 +36,10 @@ class ArticleController extends Controller
 
     public function create()
     {
+        // タグテーブルから全てのタグ情報を取得し、Bladeに変数$allTagNamesとして渡す
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
-
         return view('articles.create', [
             'allTagNames' => $allTagNames,
         ]);
@@ -70,6 +70,7 @@ class ArticleController extends Controller
         $article->user_id = $request->user()->id;
         $article->save();
 
+        // タグの登録と記事・タグの紐付け
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $article->tags()->attach($tag);
@@ -80,10 +81,10 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
+        // タグテーブルから全てのタグ情報を取得し、Bladeに変数$allTagNamesとして渡す
         $tagNames = $article->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
-
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
@@ -100,6 +101,7 @@ class ArticleController extends Controller
         // モデルのfillメソッドの戻り値はそのモデル自身なので、そのままsaveメソッドを繋げて使う
         $article->fill($request->all())->save();
 
+        // タグの登録と記事・タグの紐付け登録・削除
         $article->tags()->detach();
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
