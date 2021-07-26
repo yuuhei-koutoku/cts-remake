@@ -12,18 +12,18 @@
 | 7 | [DB設計](https://github.com/yuuhei-koutoku/cts-remake#db%E8%A8%AD%E8%A8%88) |
 | 8 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
 
-## URL
+## 1.URL
 - URL：<URL>
 - ユーザー：ゲストログインボタンを押すと簡単にログインできます。
 
-## 概要
+## 2.概要
 建設業界で働いている方をターゲットとした、建設関係の技術情報を投稿し共有するCGMサービスです。
 
-## 制作背景
+## 3.制作背景
 建設業界では自分たちの保持している情報を外部に発信する場が少ないので、気軽にWeb上に公開できるよう
 なサービスがあったら面白いと考え作成しました。
 
-## 使用技術、バージョン
+## 4.使用技術、バージョン
 - フロントエンド
     - HTML / CSS / MDBootstrap
     - vue.js 2.6.12
@@ -36,7 +36,7 @@
     - nginx 1.18.0（開発環境） / Apache 2.4.48（本番環境）
     - AWS（EC2, RDS, Route 53, S3）
 
-## 環境構築手順
+## 5.環境構築手順
 1.GitHubよりダウンロード
 ```
 $ git clone https://github.com/yuuhei-koutoku/cts-remake.git
@@ -62,7 +62,7 @@ $ docker-compose exec app npm install
 $ docker-compose exec app npm run watch-poll
 ```
 
-## 機能一覧
+## 6.機能一覧
 - ユーザー関連
     - ユーザー登録機能
     - ログイン機能
@@ -79,7 +79,7 @@ $ docker-compose exec app npm run watch-poll
     - 編集
     - 削除
 
-## DB設計
+## 7.DB設計
 ### ER図
 ![erd-image](/src/public/images/cts-remake_erd.PNG)
 ### テーブル設計
@@ -132,5 +132,5 @@ $ docker-compose exec app npm run watch-poll
 | created_at | 日付と時刻 | 作成日時                |
 | updated_at | 日付と時刻 | 更新日時                |
 
-## インフラ構成図
+## 8.インフラ構成図
 ![infra-image](/src/public/images/cts-remake_infra.PNG)
