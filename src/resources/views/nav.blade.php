@@ -7,7 +7,7 @@
 
         <a class="navbar-brand" href="/">
             <i class="fas fa-building"></i>
-            <span class="logo_style">建設技術情報サイト</span>
+            <span class="logo_style">工事現場情報サイト</span>
         </a>
 
         <ul class="navbar-nav ml-auto mt-lg-0">

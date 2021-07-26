@@ -13,7 +13,7 @@
                 <!-- Content -->
                 <h5 class="text-uppercase font-weight-bold">
                     <i class="fas fa-building"></i>
-                    <span class="logo_style">建設技術情報サイト</span>
+                    <span class="logo_style">工事現場情報サイト</span>
                 </h5>
                 <p class="site-remarks">このサイトは架空サイトです。<a href="https://www.decn.co.jp/" target="_blank" rel="noopener noreferrer"><u>日刊建設工業新聞</u></a>から引用しています。</p>
 
