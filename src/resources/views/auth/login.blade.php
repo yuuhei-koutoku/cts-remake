@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'ログイン')
+@section('title', '工事現場情報サイト ログイン')
 
 @section('content')
 @include('nav')
