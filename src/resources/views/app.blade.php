@@ -8,7 +8,11 @@
     <title>
         @yield('title')
     </title>
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    @if(config('app.env') === 'production')
+        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @endif
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -40,4 +44,5 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 
 </body>
+
 </html>

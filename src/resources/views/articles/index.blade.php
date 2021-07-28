@@ -7,7 +7,7 @@
 <div class="container">
     <!-- トップページ画像 -->
     @guest
-    <img src="/images/Construction-pana_r3.png" width="100%">
+    <img src="/images/Construction-pana_r5.png" width="100%">
     @endguest
 
     <!-- 検索フォーム -->
