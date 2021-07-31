@@ -7,7 +7,24 @@
 <div class="container">
     <!-- トップページ画像 -->
     @guest
-    <img src="/images/Construction-pana_r5.png" width="100%">
+    <div class="row">
+        <div class="col-lg-6 my-2">
+            <i class="fas fa-building"></i>
+            <span class="logo_style">工事現場情報サイト</span>
+        </div>
+        <div class="col-lg-6 my-2">
+            <img src="/images/Construction-pana_r5.png" width="100%">
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <p>工事現場情報サイトとは</p>
+        <p>
+            工事現場で活かせるスキルやテクニックを共有するサイトです。<br>
+            現場で仕事をする上で、役立つ知識をみんなでシェアしましょう。<br>
+            このサイトに投稿された情報は、是非現場で活用してみてください。
+        </p>
+    </div>
     @endguest
 
     <!-- 検索フォーム -->
