@@ -126,6 +126,16 @@ overflow-y: scroll;
 height: 300px;
 }
 
+/* フッター 記事が少ないときでも位置を固定するための処理 */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#app {
+  flex: 1;
+}
+
 /* レスポンシブ対応 */
 /* 1200px未満で適用 デスクトップサイズ */
 @media screen and (max-width:1200px) {
