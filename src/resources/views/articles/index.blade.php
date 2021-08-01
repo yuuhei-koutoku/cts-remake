@@ -16,7 +16,7 @@
         </div>
         <!-- トップページ画像 -->
         <div class="col-lg-6 my-2">
-            <img src="/images/Construction-pana_r5.png" width="100%">
+            <img src="/images/Construction-pana_r1.png" width="100%">
         </div>
     </div>
 </div>
