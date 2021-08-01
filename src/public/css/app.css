@@ -126,25 +126,6 @@ overflow-y: scroll;
 height: 300px;
 }
 
-/* フッター */
-/* 記事が少ないときでも位置を固定するための処理 */
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-#app {
-  flex: 1;
-}
-/* 余白調整 */
-footer {
-  padding-top: 24px;
-}
-/* リンク 余白調整（スマホ画面以外の時、リンクは左側に配置） */
-.footer-list {
-  margin-right: 16px;
-}
-
 /* レスポンシブ対応 */
 /* 1200px未満で適用 デスクトップサイズ */
 @media screen and (max-width:1200px) {
@@ -194,22 +175,6 @@ footer {
   .article-img-size-index {
     width: 510px;
     height: 287px;
-  }
-  /* フッター 余白調整 */
-  footer {
-    padding-top: 0;
-  }
-  .site-remarks {
-    margin-bottom: 0;
-  }
-  .footer-list {
-    margin: 0 16px;
-  }
-  /* フッター リストを中央に配置 */
-  .footer-ul {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 }
 /* 576px未満で適用 スマートフォンサイズ（縦） */
