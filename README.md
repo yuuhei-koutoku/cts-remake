@@ -1,5 +1,6 @@
 # 工事現場情報サイト
-<画像>
+![site-main-image](/src/public/images/site_main_image.PNG)
+
 ## 目次
 | 番号 | 項目 |
 |:-:|:--|
