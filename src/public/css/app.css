@@ -15,6 +15,24 @@
 }
 
 /* 記事一覧 */
+/* ログアウト時のメインビュー */
+.main-title {
+  font-size: 36px;
+  color: #00695c;
+  text-align: center;
+  padding: 175px 0;
+}
+.site-consept {
+  color: white;
+  background-color: #2BBBAD;
+  padding: 10px 0;
+}
+.sub-title {
+  font-size: 30px;
+}
+.sub-body {
+  font-size: 18px;
+}
 /* 画像 サイズ指定 */
 .article-img-size-index {
   width: 255px;
