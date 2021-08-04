@@ -173,6 +173,9 @@ body {
 }
 /* 768px未満で適用 スマートフォンサイズ（横） */
 @media screen and (max-width:768px) {
+  .sp-br{
+    display: none;
+  }
   /* 記事一覧 画像 余白調整 */
   .article-img-padding {
     padding: 0;
