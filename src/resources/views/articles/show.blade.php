@@ -49,7 +49,7 @@
         <div class="card example-1 square scrollbar-dusty-grass square thin mb-5">
             <div class="card-body">
                 @forelse($comments as $comment)
-                <div class="body-font my-3">
+                <div class="body-font some-comments my-3">
                     <!-- コメント -->
                     {!! nl2br(e($comment->body)) !!}
                     <!-- コメント 投稿者名、日時、3点リーダー -->
@@ -61,7 +61,7 @@
                     <hr>
                 </div>
                 @empty
-                <p class="body-font">コメントはまだありません。</p>
+                <p class="body-font no-comment">コメントはまだありません。</p>
                 @endforelse
             </div>
         </div>
