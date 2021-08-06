@@ -176,6 +176,9 @@ body {
   .sp-br{
     display: none;
   }
+  .sub-body {
+    text-align: left;
+  }
   /* 記事一覧 画像 余白調整 */
   .article-img-padding {
     padding: 0;
@@ -195,10 +198,6 @@ body {
   /* ログアウト時のメインビュー サイトメインタイトル 文字サイズ調整 */
   .main-title {
     font-size: 24px;
-  }
-  /* ログアウト時のメインビュー サイトコンセプト 余白調整 */
-  .site-consept {
-    padding: 10px 15px;
   }
   /* ログアウト時のメインビュー サイトサブタイトル 文字サイズ調整 */
   .sub-title {

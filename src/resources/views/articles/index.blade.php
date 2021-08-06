@@ -24,11 +24,17 @@
 <!-- サイトのコンセプトの説明 -->
 <div class="site-consept text-center my-2">
     <p class="sub-title mb-1">工事現場情報サイトとは</p>
-    <p class="sub-body mb-0">
-        工事現場で活かせるスキルやテクニックを共有するサイトです。<br class="sp-br">
-        現場で仕事をする上で、役立つ知識をみんなでシェアしましょう。<br class="sp-br">
-        このサイトに投稿された情報は、是非現場で活用してみてください。
-    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="sub-body mb-0">
+                    工事現場で活かせるスキルやテクニックを共有するサイトです。<br class="sp-br">
+                    現場で仕事をする上で、役立つ知識をみんなでシェアしましょう。<br class="sp-br">
+                    このサイトに投稿された情報は、是非現場で活用してみてください。
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 @endguest
 
