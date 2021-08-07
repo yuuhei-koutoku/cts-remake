@@ -60,10 +60,19 @@ class ArticleController extends Controller
             $filename = $request->file('image')->getClientOriginalName();
             // 画像ファイルを変数に代入
             $resize_img = InterventionImage::make($file)->encode($extension);
-            // バケットの`myprefix`フォルダへアップロード
-            $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
-            // アップロードした画像のフルパスを取得
-            $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
+            if (config('app.env') === 'production') {
+                // 本番環境
+                // バケットの`myprefix`フォルダへアップロード
+                $path = Storage::disk('s3')->put('/myprefix/'.$filename, (string)$resize_img, 'public');
+                // アップロードした画像のフルパスを取得
+                $article->image = Storage::disk('s3')->url('myprefix/'.$filename);
+            } else {
+                // 開発環境
+                // バケットの`localimage`フォルダへアップロード
+                $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
+                // アップロードした画像のフルパスを取得
+                $article->image = Storage::disk('s3')->url('localimage/' . $filename);
+            }
         }
 
         // userメソッドでリクエストしたユーザーのidを取得し、Articleモデルのインスタンスのuser_idプロパティに代入
