@@ -182,9 +182,11 @@ body {
 }
 /* 768px未満で適用 スマートフォンサイズ（横） */
 @media screen and (max-width:768px) {
-  .sp-br{
+  /* ログアウト時のメインビュー サイトコンセプト説明 改行隠す */
+  .br-sm{
     display: none;
   }
+  /* ログアウト時のメインビュー サイトコンセプト説明 左寄せ */
   .sub-body {
     text-align: left;
   }
@@ -224,5 +226,13 @@ body {
   /* 記事一覧 画像以外 余白調整 */
   .title-tag-other {
     padding: 0 15px;
+  }
+  /* ログイン 注意事項 改行隠す */
+  .br-vsm {
+    display: none;
+  }
+  /* ログイン 注意事項 左寄せ */
+  .signin-precautions{
+    text-align: left;
   }
 }
