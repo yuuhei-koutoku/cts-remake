@@ -81,7 +81,7 @@ $ docker-compose exec app npm run watch-poll
 
 ## 7.DB設計
 ### ER図
-![erd-image](/src/public/images/cts-remake_erd.PNG)
+![erd-image](/diagram/cts-remake_erd.PNG)
 ### テーブル設計
 #### usersテーブル
 ユーザーを管理する。nameにユニーク制約を追加している。
@@ -133,6 +133,6 @@ $ docker-compose exec app npm run watch-poll
 | updated_at | 日付と時刻 | 更新日時                |
 
 ## 8.インフラ構成図
-![infra-image](/src/public/images/cts-remake_infra.PNG)
+![infra-image](/diagram/cts-remake_infra.PNG)
 
 ##### [↑ページトップへ](https://github.com/yuuhei-koutoku/cts-remake)
