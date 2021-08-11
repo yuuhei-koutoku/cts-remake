@@ -107,6 +107,20 @@ class ArticleController extends Controller
 
     public function update(ArticleRequest $request, Article $article)
     {
+        /*
+        // 画像投稿 更新処理実装中
+        if ($request->file('image')) {
+            // Storage::disk('s3')->delete('localimage/. $filename'); // S3バケットにある旧画像データを削除
+            $image = $request->file('image');
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filename = $request->file('image')->getClientOriginalName();
+            $resize_img = InterventionImage::make($image)->encode($extension);
+            $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
+            $article->image = $path;
+            // $article->image = Storage::disk('s3')->url('localimage/' . $filename);
+        }
+        */
+
         // モデルのfillメソッドの戻り値はそのモデル自身なので、そのままsaveメソッドを繋げて使う
         $article->fill($request->all())->save();
 
