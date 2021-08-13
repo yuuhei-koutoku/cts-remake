@@ -61,7 +61,7 @@
                     <hr>
                 </div>
                 @empty
-                <p class="body-font text-center">コメントはまだありません。</p>
+                <p class="body-font no-comment">コメントはまだありません。</p>
                 @endforelse
             </div>
         </div>
