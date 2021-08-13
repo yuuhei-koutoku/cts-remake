@@ -123,16 +123,7 @@
 .example-1 {
   position: relative;
   overflow-y: scroll;
-  /* height: 300px; */
-}
-/* コメントがある時の高さ */
-.some-comments {
   height: 300px;
-}
-/* コメントがない時の高さ */
-.no-comment {
-  height: 10px;
-  text-align: center;
 }
 
 /* フッター 記事が少ないときでも位置を固定するための処理 */
