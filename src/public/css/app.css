@@ -125,6 +125,11 @@
   overflow-y: scroll;
   height: 300px;
 }
+/* コメント一覧 コメントがない場合 */
+.no-comment {
+  text-align: center;
+  margin-top: 118px;
+}
 
 /* フッター 記事が少ないときでも位置を固定するための処理 */
 body {
