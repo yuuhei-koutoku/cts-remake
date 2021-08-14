@@ -15,7 +15,9 @@
 
 ## 1.URL
 - URL：https://koujigenba.site/
-- ユーザー：ゲストログインボタンを押すと簡単にログインできます。
+- ユーザー：ヘッダーもしくはログイン画面のゲストログインボタンを押すと簡単にログインできます。
+![site-main-image](/src/public/images/header_guestlogin.PNG)
+![site-main-image](/src/public/images/loginform_guestlogin.PNG)
 
 ## 2.概要
 工事現場の役立つスキルやテクニックなどの知識・情報を互いに共有するサイトです。
