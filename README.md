@@ -1,5 +1,5 @@
 # 工事現場情報サイト
-![site-main-image](/src/public/images/Animation.gif)
+![site-animation](/src/public/images/readme/Animation.gif)
 
 ## 目次
 | 番号 | 項目 |
@@ -16,8 +16,7 @@
 ## 1.URL
 - URL：https://koujigenba.site/
 - ユーザー：ヘッダーもしくはログイン画面のゲストログインボタンを押すと簡単にログインできます。
-![site-main-image](/src/public/images/header_guestlogin.PNG)
-![site-main-image](/src/public/images/loginform_guestlogin.PNG)
+![guestlogin-image](/src/public/images/readme/guestlogin.PNG)
 
 ## 2.概要
 工事現場の役立つスキルやテクニックなどの知識・情報を互いに共有するサイトです。
@@ -135,6 +134,6 @@ $ docker-compose exec app npm run watch-poll
 | updated_at | 日付と時刻 | 更新日時                |
 
 ## 8.インフラ構成図
-![infra-image](/diagram/cts-remake_infra.PNG)
+![infra-image](/diagram/cts-remake_infra_r1.PNG)
 
 ##### [↑ページトップへ](https://github.com/yuuhei-koutoku/cts-remake)
