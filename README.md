@@ -22,9 +22,16 @@
 工事現場の役立つスキルやテクニックなどの知識・情報を互いに共有するサイトです。
 
 ## 3.制作背景
-工事現場で働いている人にとって、現場で活かせるスキルやテクニックは非常に貴重なものです。しかし、このような情報はあまりインターネット上では出回らないです。そこで、現場で働いている人がWeb上で互いに情報共有できたら、新たな知見や視点を得て、現場に役立てることができると考え作成しました。
+工事現場で働いている人にとって、現場で活かせるスキルやテクニックは非常に有益で貴重なものです。
+しかし、このような情報はあまりインターネット上では出回らないので、情報共有できるWebアプリを作成しました。
 
-## 4.使用技術、バージョン
+## 4.目的
+現場で働いている人が互いにWeb上で情報共有することで、新たな知見や視点を得ることにより、普段働いている現場に役立てることを目的としています。
+
+## 5.使用画面のイメージ
+![usage-screen-image](/src/public/images/readme/cts-remake_usage-screen.png)
+
+## 6.使用技術、バージョン
 - フロントエンド
     - HTML / CSS / MDBootstrap
     - vue.js 2.6.12
@@ -37,7 +44,7 @@
     - nginx 1.18.0（開発環境） / Apache 2.4.48（本番環境）
     - AWS（EC2, RDS, Route 53, S3）
 
-## 5.環境構築手順
+## 7.環境構築手順
 1.GitHubよりダウンロード
 ```
 $ git clone https://github.com/yuuhei-koutoku/cts-remake.git
@@ -63,7 +70,7 @@ $ docker-compose exec app npm install
 $ docker-compose exec app npm run watch-poll
 ```
 
-## 6.機能一覧
+## 8.機能一覧
 - ユーザー関連
     - ユーザー登録機能
     - ログイン機能
@@ -80,7 +87,7 @@ $ docker-compose exec app npm run watch-poll
     - 編集
     - 削除
 
-## 7.DB設計
+## 9.DB設計
 ### ER図
 ![erd-image](/diagram/cts-remake_erd.PNG)
 ### テーブル設計
@@ -133,7 +140,7 @@ $ docker-compose exec app npm run watch-poll
 | created_at | 日付と時刻 | 作成日時                |
 | updated_at | 日付と時刻 | 更新日時                |
 
-## 8.インフラ構成図
+## 10.インフラ構成図
 ![infra-image](/diagram/cts-remake_infra_r1.PNG)
 
 ##### [↑ページトップへ](https://github.com/yuuhei-koutoku/cts-remake)
