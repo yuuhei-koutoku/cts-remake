@@ -16,9 +16,10 @@
 | 10 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#10%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
 
 ## 1.URL
-- URL：https://koujigenba.site/
+- URL：https://koujigenba.site
 - ユーザー：ヘッダーもしくはログイン画面のゲストログインボタンを押すと簡単にログインできます。
 ![guestlogin-image](/src/public/images/readme/guestlogin.png)
+なお、以前作成した[Construction-Technologies-Site](https://construction-technologies-site.herokuapp.com)と[工事現場情報サイト](https://koujigenba.site)を比較した、紹介記事をQiitaにて執筆しております。[Ruby・Railsで作ったポートフォリオをPHP・Laravelでリメイクしてみた](https://qiita.com/Yuhei_K/items/06805f3ac8607f77952f)
 
 ## 2.概要
 工事現場の役立つスキルやテクニックなどの知識・情報を互いに共有するサイトです。
