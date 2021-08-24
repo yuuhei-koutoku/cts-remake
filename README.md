@@ -145,6 +145,6 @@ $ docker-compose exec app npm run watch-poll
 | updated_at | 日付と時刻 | 更新日時                |
 
 ## 10.インフラ構成図
-![infra-image](/diagram/cts-remake_infra_r1.PNG)
+![infra-image](/diagram/cts-remake_infra_r2.PNG)
 
 ##### [↑ページトップへ](https://github.com/yuuhei-koutoku/cts-remake)
