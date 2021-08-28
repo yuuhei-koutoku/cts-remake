@@ -33,7 +33,7 @@
 現場で働いている人が互いにWeb上で情報共有することで、新たな知見や視点を得ることにより、普段働いている現場に役立てることを目的としています。
 
 ## 5.使用画面のイメージ
-![usage-screen-image](/src/public/images/readme/cts-remake_usage-screen.png)
+![usage-screen-image](/src/public/images/readme/cts-remake_usage-screen-image_r1.png)
 
 ## 6.使用技術、バージョン
 - フロントエンド
