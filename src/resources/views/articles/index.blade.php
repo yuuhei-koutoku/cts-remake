@@ -4,6 +4,8 @@
 
 @section('content')
 @include('nav')
+
+<!-- メインビュー（サイトタイトル、イラスト、コンセプト）はログアウト時のみ表示 -->
 @guest
 <div class="container">
     <div class="row">
@@ -14,7 +16,7 @@
                 <span class="logo_style">工事現場情報サイト</span>
             </div>
         </div>
-        <!-- トップページ画像 -->
+        <!-- イラスト -->
         <div class="col-lg-6 my-2">
             <img src="/images/Construction-pana_r1.png" width="100%">
         </div>
