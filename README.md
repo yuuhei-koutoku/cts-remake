@@ -12,10 +12,10 @@
 | 6 | [使用技術、バージョン](https://github.com/yuuhei-koutoku/cts-remake#6%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3) |
 | 7 | [環境構築手順](https://github.com/yuuhei-koutoku/cts-remake#7%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E6%89%8B%E9%A0%86) |
 | 8 | [機能一覧](https://github.com/yuuhei-koutoku/cts-remake#8%E6%A9%9F%E8%83%BD%E4%B8%80%E8%A6%A7) |
-| 9 | [工夫点]() |
-| 10 | [苦労した点]() |
-| 11 | [DB設計]() |
-| 12 | [インフラ構成図]() |
+| 9 | [工夫点](https://github.com/yuuhei-koutoku/cts-remake#9%E5%B7%A5%E5%A4%AB%E7%82%B9) |
+| 10 | [苦労した点](https://github.com/yuuhei-koutoku/cts-remake#10%E8%8B%A6%E5%8A%B4%E3%81%97%E3%81%9F%E7%82%B9) |
+| 11 | [DB設計](https://github.com/yuuhei-koutoku/cts-remake#11db%E8%A8%AD%E8%A8%88) |
+| 12 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#12%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
 
 ## 1.URL
 - URL：https://koujigenba.site
