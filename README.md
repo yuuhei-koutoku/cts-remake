@@ -12,8 +12,10 @@
 | 6 | [使用技術、バージョン](https://github.com/yuuhei-koutoku/cts-remake#6%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3) |
 | 7 | [環境構築手順](https://github.com/yuuhei-koutoku/cts-remake#7%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E6%89%8B%E9%A0%86) |
 | 8 | [機能一覧](https://github.com/yuuhei-koutoku/cts-remake#8%E6%A9%9F%E8%83%BD%E4%B8%80%E8%A6%A7) |
-| 9 | [DB設計](https://github.com/yuuhei-koutoku/cts-remake#9db%E8%A8%AD%E8%A8%88) |
-| 10 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#10%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
+| 9 | [工夫点]() |
+| 10 | [苦労した点]() |
+| 11 | [DB設計]() |
+| 12 | [インフラ構成図]() |
 
 ## 1.URL
 - URL：https://koujigenba.site
@@ -46,7 +48,7 @@
     - MySQL 8.0.25
     - Docker 17:03:37 / docker-compose 1.29.1
     - nginx 1.18.0（開発環境） / Apache 2.4.48（本番環境）
-    - AWS（EC2, RDS, Route 53, S3）
+    - AWS（VPC、EC2、Route 53、RDS、S3、Certificate Manager）
 
 ## 7.環境構築手順
 1.GitHubよりダウンロード
@@ -91,7 +93,16 @@ $ docker-compose exec app npm run watch-poll
     - 編集
     - 削除
 
-## 9.DB設計
+## 9.工夫点
+- ユーザーが知りたい情報をすぐに得られるようアプリの設計し、機能を実装（検索機能、タグ機能）しました。
+- 全体的に色彩を明るくしたり、アイコン・イラストを用いることで、ユーザーインターフェースを向上しました。
+
+## 10.苦労した点
+- AWS EC2へのデプロイが特に大変でした。Webサーバーにcomposerなどをインストールしたり、ドキュメントルートの設定を行ったりと、色々やることが多くてややこしかったです。
+- AWS S3バケットへ画像ファイル保存も難しかったです。躓いた点は[[Laravel]AWS S3に画像をアップロードする際に発生したエラー](https://qiita.com/Yuhei_K/items/1332e4e1ac64baf8ee11)にてアウトプットしております。
+- 常時SSL化（URLをhttpからhttpsに変更）に関しては、参考になる情報が少なかったので苦戦しました。URLをhttpsに変える方法は[Laravelを常時SSL化する（初心者向け）](https://qiita.com/Yuhei_K/items/130c8353946b0397154c)にまとめております。
+
+## 11.DB設計
 ### ER図
 ![erd-image](/diagram/cts-remake_erd.PNG)
 ### テーブル設計
@@ -144,7 +155,7 @@ $ docker-compose exec app npm run watch-poll
 | created_at | 日付と時刻 | 作成日時                |
 | updated_at | 日付と時刻 | 更新日時                |
 
-## 10.インフラ構成図
+## 12.インフラ構成図
 ![infra-image](/diagram/cts-remake_infra_r2.PNG)
 
 ##### [↑ページトップへ](https://github.com/yuuhei-koutoku/cts-remake)
