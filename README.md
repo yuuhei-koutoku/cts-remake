@@ -40,7 +40,7 @@
 ## 6.使用技術、バージョン
 - フロントエンド
     - HTML / CSS / MDBootstrap
-    - vue.js 2.6.12
+    - Vue.js 2.6.12
 - バックエンド
     - PHP 7.4.1
     - Laravel 6.20.26
@@ -49,6 +49,8 @@
     - Docker 17:03:37 / docker-compose 1.29.1
     - nginx 1.18.0（開発環境） / Apache 2.4.48（本番環境）
     - AWS（VPC、EC2、Route 53、RDS、S3、Certificate Manager）
+    - Visual Studio Code
+    - draw.io
 
 ## 7.環境構築手順
 1.GitHubよりダウンロード
