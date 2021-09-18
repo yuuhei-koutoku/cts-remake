@@ -114,7 +114,7 @@ class ArticleController extends Controller
             $filename = $request->file('image')->getClientOriginalName();
             $resize_img = InterventionImage::make($image)->encode($extension);
             $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
-            $article->image = $path;
+            $article->image = Storage::disk('s3')->url('localimage/' . $filename);
         }
 
         // モデルのfillメソッドの戻り値はそのモデル自身なので、そのままsaveメソッドを繋げて使う
