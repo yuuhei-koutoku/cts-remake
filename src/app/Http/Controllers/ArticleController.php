@@ -113,6 +113,7 @@ class ArticleController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             $filename = $request->file('image')->getClientOriginalName();
             $resize_img = InterventionImage::make($image)->encode($extension);
+            $disk = Storage::disk('s3')->delete(str_replace('https://ctsremake-imgsave.s3.ap-northeast-1.amazonaws.com/', '', $article->image)); //画像削除ロジック
             $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
             $article->image = Storage::disk('s3')->url('localimage/' . $filename);
         }
