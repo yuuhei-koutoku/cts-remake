@@ -114,8 +114,15 @@ class ArticleController extends Controller
             $filename = $request->file('image')->getClientOriginalName();
             $resize_img = InterventionImage::make($image)->encode($extension);
             $disk = Storage::disk('s3')->delete(str_replace('https://ctsremake-imgsave.s3.ap-northeast-1.amazonaws.com/', '', $article->image)); //画像削除ロジック
-            $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
-            $article->image = Storage::disk('s3')->url('localimage/' . $filename);
+            if (config('app.env') === 'production') {
+                // 本番環境
+                $path = Storage::disk('s3')->put('/myprefix/' . $filename, (string)$resize_img, 'public');
+                $article->image = Storage::disk('s3')->url('myprefix/' . $filename);
+            } else {
+                // 開発環境
+                $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
+                $article->image = Storage::disk('s3')->url('localimage/' . $filename);
+            }
         }
 
         // モデルのfillメソッドの戻り値はそのモデル自身なので、そのままsaveメソッドを繋げて使う
