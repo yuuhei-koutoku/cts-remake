@@ -141,6 +141,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
+        $disk = Storage::disk('s3')->delete(str_replace('https://ctsremake-imgsave.s3.ap-northeast-1.amazonaws.com/', '', $article->image)); //画像削除ロジック
 
         return redirect()->route('articles.index');
     }
