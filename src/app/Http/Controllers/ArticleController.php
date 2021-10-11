@@ -50,9 +50,9 @@ class ArticleController extends Controller
         // Artcleモデルのfillableプロパティ内に指定しておいたプロパティを、$articleの各プロパティに代入
         $article->fill($request->all());
 
-        // 画像投稿機能
-        if ($request->file('image')){
-            // formから送信されたimgファイルを読み込む
+        // 画像投稿処理
+        if ($request->file('image')) {
+            // formから送信されたimgファイルの読み込み
             $file = $request->file('image');
             // 画像の拡張子を取得
             $extension = $request->file('image')->getClientOriginalExtension();
@@ -107,7 +107,7 @@ class ArticleController extends Controller
 
     public function update(ArticleRequest $request, Article $article)
     {
-        // 画像投稿 更新処理
+        // 画像投稿更新処理
         if ($request->file('image')) {
             $image = $request->file('image');
             $extension = $request->file('image')->getClientOriginalExtension();
@@ -116,10 +116,12 @@ class ArticleController extends Controller
             $disk = Storage::disk('s3')->delete(str_replace('https://ctsremake-imgsave.s3.ap-northeast-1.amazonaws.com/', '', $article->image)); //画像削除ロジック
             if (config('app.env') === 'production') {
                 // 本番環境
+                // バケットの`myprefix`フォルダへアップロード
                 $path = Storage::disk('s3')->put('/myprefix/' . $filename, (string)$resize_img, 'public');
                 $article->image = Storage::disk('s3')->url('myprefix/' . $filename);
             } else {
                 // 開発環境
+                // バケットの`localimage`フォルダへアップロード
                 $path = Storage::disk('s3')->put('/localimage/' . $filename, (string)$resize_img, 'public');
                 $article->image = Storage::disk('s3')->url('localimage/' . $filename);
             }
