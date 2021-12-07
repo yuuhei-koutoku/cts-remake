@@ -12,7 +12,7 @@
         </div>
     </div>
     <!-- 選択されたタグが付けられた記事一覧 -->
-    @foreach($tag->articles as $article)
+    @foreach($tag->articles->sortByDesc('created_at') as $article)
     @include('articles.list')
     @endforeach
 </div>
