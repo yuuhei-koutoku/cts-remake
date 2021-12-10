@@ -3,6 +3,7 @@
     "yarn": "1.x"
   },
   "scripts": {
+    "dev": "npm run development",
     "postinstall": "cd ./frontend && yarn && yarn run webpack --config ./webpack.config.js --mode production"
   }
 }
