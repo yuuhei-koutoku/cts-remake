@@ -15,7 +15,7 @@ use App\Http\Controllers\CommentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 //users
 Auth::routes();
 
@@ -30,4 +30,3 @@ Route::get('/tags/{name}', 'TagController@show')->name('tags.show'); //タグに
 
 //comments
 Route::resource('/comments', 'CommentController')->except(['index', 'create', 'show'])->middleware('auth');
-*/
