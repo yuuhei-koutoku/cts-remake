@@ -1,5 +1,5 @@
 <?php
-echo 'Hello!';
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
@@ -7,7 +7,7 @@ echo 'Hello!';
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
-// define('LARAVEL_START', microtime(true));
+define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ echo 'Hello!';
 |
 */
 
-// require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ echo 'Hello!';
 |
 */
 
-// $app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ echo 'Hello!';
 | and wonderful application we have prepared for them.
 |
 */
-/*
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
@@ -58,4 +58,3 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
-*/
