@@ -13,6 +13,7 @@ class RedirectToHttps
      * @param  \Closure  $next
      * @return mixed
      */
+    /*
     public function handle($request, Closure $next)
     {
         //このhandleメソッドで判別
@@ -44,4 +45,5 @@ class RedirectToHttps
 
         return false;
     }
+    */
 }
