@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'heroku'), // 開発環境:local、本番環境:production、Heroku環境:heroku
+    'env' => env('APP_ENV', 'local'), // 開発環境:local、本番環境:production
 
     /*
     |--------------------------------------------------------------------------
