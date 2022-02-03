@@ -10,6 +10,8 @@
     </title>
     @if(config('app.env') === 'production')
         <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    @elseif(config('app.env') === 'heroku')
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @else
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @endif
