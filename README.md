@@ -18,10 +18,8 @@
 | 12 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#12%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
 
 ## 1.URL
-- ~~AWSデプロイ_URL：https://koujigenba.site~~
-現在公開停止中です。
-- Herokuデプロイ_URL：https://koujigenba.herokuapp.com
-起動に数秒時間がかかります。
+- AWSデプロイ_URL：~~https://koujigenba.site~~ （現在公開停止中です。）
+- Herokuデプロイ_URL：https://koujigenba.herokuapp.com （起動に数秒時間がかかります。）
 - ユーザー：ヘッダーもしくはログイン画面のゲストログインボタンを押すと簡単にログインできます。
 ![guestlogin-image](/src/public/images/readme/guestlogin.png)
 
