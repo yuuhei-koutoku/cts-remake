@@ -9,9 +9,9 @@
         @yield('title')
     </title>
     @if(config('app.env') === 'production')
-        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
     @else
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     @endif
 
     <!-- Font Awesome -->
