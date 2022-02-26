@@ -18,12 +18,13 @@
 | 12 | [インフラ構成図](https://github.com/yuuhei-koutoku/cts-remake#12%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A7%8B%E6%88%90%E5%9B%B3) |
 
 ## 1.URL
-- AWSデプロイ_URL：~~https://koujigenba.site~~ （現在公開停止中です。）
+- AWSデプロイ_URL：~~https://koujigenba.site~~ （公開停止しました。）
 - Herokuデプロイ_URL：https://koujigenba.herokuapp.com （起動に数秒時間がかかります。）
 - ユーザー：ヘッダーもしくはログイン画面のゲストログインボタンを押すと簡単にログインできます。
+
 ![guestlogin-image](/src/public/images/readme/guestlogin.png)
 
-なお、以前作成した[Construction-Technologies-Site](https://construction-technologies-site.herokuapp.com)と[工事現場情報サイト](https://koujigenba.site)を比較した、紹介記事をQiitaにて執筆しております。[Ruby・Railsで作ったポートフォリオをPHP・Laravelでリメイクしてみた](https://qiita.com/Yuhei_K/items/06805f3ac8607f77952f)
+なお、以前作成した[Construction-Technologies-Site](https://construction-technologies-site.herokuapp.com)と[工事現場情報サイト](https://koujigenba.herokuapp.com)を比較した、紹介記事をQiitaにて執筆しております。[Ruby・Railsで作ったポートフォリオをPHP・Laravelでリメイクしてみた](https://qiita.com/Yuhei_K/items/06805f3ac8607f77952f)
 
 ## 2.概要
 工事現場の役立つスキルやテクニックなどの知識・情報を互いに共有するサイトです。
@@ -100,6 +101,7 @@ $ docker-compose exec app npm run watch-poll
 - AWS EC2へのデプロイが特に大変でした。Webサーバーにcomposerなどをインストールしたり、ドキュメントルートの設定を行ったりと、色々やることが多くてややこしかったです。
 - AWS S3バケットへ画像ファイル保存も難しかったです。躓いた点は[[Laravel]AWS S3に画像をアップロードする際に発生したエラー](https://qiita.com/Yuhei_K/items/1332e4e1ac64baf8ee11)にてアウトプットしております。
 - 常時SSL化（URLをhttpからhttpsに変更）に関しては、参考になる情報が少なかったので苦戦しました。URLをhttpsに変える方法は[Laravelを常時SSL化する（初心者向け）](https://qiita.com/Yuhei_K/items/130c8353946b0397154c)にまとめております。
+- 【後日追記】このポートフォリオはAWSへデプロイしていましたが、Herokuへの移行を行いました。頑張って作ったアプリなので今後も見れる形で残したいけど、AWSで公開し続けると料金が発生してしまうので、無料で利用できるHerokuへデプロイし直しました。Herokuデプロイ経験は2回目（1回目はRuby・Railsで作成したポートフォリオ）なので、簡単かなと予想していたのですが、実際にやってみると想像以上に大変でした。躓いた点は[AWSにデプロイしたポートフォリオをHerokuへ移行しようとしたらかなり苦労した](https://qiita.com/Yuhei_K/items/56d1b67601c1b5ec3e18)に記載しております。LaravelアプリケーションをAWSからHerokuへデプロイし直す方は参考になると思います。
 
 ## 11.DB設計
 ### ER図
